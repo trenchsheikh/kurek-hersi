@@ -2,72 +2,82 @@
 
 import { FadeIn, FadeInStagger } from "@/components/ui/fade-in";
 import { Pill } from "@/components/ui/pill";
+import { ArrowUpRight } from "lucide-react";
 
 const steps = [
   {
-    number: "01",
     title: "Discovery & Framing",
-    description: "We align with your stakeholders to define the precise business questions and hypotheses."
+    description: "Aligning stakeholders to define precise business hypotheses.",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
   },
   {
-    number: "02",
     title: "Targeted Recruitment",
-    description: "Leveraging our proprietary network to identify and recruit niche B2B experts who hold the answers."
+    description: "Identifying niche B2B experts who hold the critical answers.",
+    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop"
   },
   {
-    number: "03",
     title: "Rigorous Collection",
-    description: "Multi-modal data gathering through in-depth interviews, surveys, and observational studies."
+    description: "Multi-modal data gathering through in-depth interviews and surveys.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop"
   },
   {
-    number: "04",
     title: "Synthesis & Strategy",
-    description: "Transforming raw data into strategic narratives and actionable roadmaps for decision-making."
+    description: "Transforming raw data into actionable narratives for decision-making.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
   }
 ];
 
 export function Methodology() {
   return (
-    <section id="methodology" className="min-h-screen py-24 bg-background relative overflow-hidden w-full flex flex-col justify-center">
+    <section id="methodology" className="min-h-screen py-32 bg-background relative overflow-hidden w-full flex flex-col justify-center">
       <div className="container px-4 md:px-6 w-full max-w-[95%]">
-        <div className="flex flex-col lg:flex-row gap-16 items-start">
+        <div className="flex flex-col gap-16">
           
-          <div className="lg:w-1/3 sticky top-32">
+          <div className="max-w-2xl">
             <FadeIn>
-              <Pill className="mb-6">Process</Pill>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-[0.9]">
-                Our <br/> Methodology
+              <Pill className="mb-6">Our Process</Pill>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-foreground mb-6 leading-[0.9]">
+                Scientific <br/> Precision.
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                A scientific approach to B2B market research, ensuring every insight is verifiable, relevant, and actionable.
+              <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
+                A rigorous approach to B2B market research, ensuring every insight is verifiable, relevant, and actionable.
               </p>
-              
-              <div className="p-6 bg-muted rounded-[1.5rem] border border-black/5">
-                <h4 className="font-serif text-xl mb-2">Why it works</h4>
-                <p className="text-sm text-muted-foreground">
-                  By strictly separating data collection from synthesis, we eliminate bias and ensure pure, objective insights.
-                </p>
-              </div>
             </FadeIn>
           </div>
 
-          <div className="lg:w-2/3">
-            <FadeInStagger className="space-y-4">
-              {steps.map((step) => (
-                <div key={step.number} className="group p-8 rounded-[2rem] bg-secondary/20 hover:bg-secondary/50 border border-transparent hover:border-black/5 transition-all duration-300 flex flex-col sm:flex-row gap-6 items-start">
-                  <div className="h-12 w-12 shrink-0 rounded-full bg-white flex items-center justify-center text-sm font-bold border border-black/5 shadow-sm text-primary">
-                    {step.number}
+          <FadeInStagger className="grid md:grid-cols-2 gap-6 w-full">
+            {steps.map((step, index) => (
+              <div 
+                key={index} 
+                className="group relative h-[400px] rounded-[2.5rem] overflow-hidden cursor-pointer"
+              >
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+                  style={{ backgroundImage: `url(${step.image})` }}
+                />
+                
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500" />
+                
+                {/* Content Overlay */}
+                <div className="absolute inset-0 p-10 flex flex-col justify-end">
+                  
+                  {/* Icon/Arrow Top Right */}
+                  <div className="absolute top-8 right-8 h-12 w-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                    <ArrowUpRight className="h-6 w-6" />
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-serif font-medium mb-2 group-hover:text-primary transition-colors">{step.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed max-w-lg">
+
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <h3 className="text-3xl font-serif font-bold text-white mb-3">{step.title}</h3>
+                    <p className="text-white/80 text-lg font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                       {step.description}
                     </p>
                   </div>
                 </div>
-              ))}
-            </FadeInStagger>
-          </div>
+              </div>
+            ))}
+          </FadeInStagger>
 
         </div>
       </div>

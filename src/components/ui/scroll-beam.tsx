@@ -12,10 +12,10 @@ export function ScrollBeam() {
 
   return (
     <motion.div
-      className="fixed top-0 right-0 bottom-0 w-1.5 bg-accent/20 z-[100] hidden md:block" // Track
+      className="fixed top-0 right-0 bottom-0 w-1.5 bg-primary/20 z-[100] hidden md:block" // Track
     >
       <motion.div
-        className="absolute top-0 left-0 w-full bg-accent shadow-[0_0_15px_rgba(var(--accent),0.8)] origin-top rounded-b-full" // Beam
+        className="absolute top-0 left-0 w-full bg-gradient-to-b from-primary via-primary to-[#4ade80] origin-top rounded-b-full" // Gradient Beam No Glow
         style={{ scaleY, height: "100%" }}
       />
     </motion.div>
