@@ -10,6 +10,8 @@ const dmSerif = DM_Serif_Display({
   style: "normal" 
 });
 
+import { ScrollBeam } from "@/components/ui/scroll-beam";
+
 export const metadata: Metadata = {
   title: "Kurek Hersi - Strategic B2B Intelligence",
   description: "Expert consulting that drives real growth.",
@@ -23,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${plusJakarta.variable} ${dmSerif.variable} font-sans antialiased bg-background text-foreground`}>
+        <ScrollBeam />
         {children}
       </body>
     </html>

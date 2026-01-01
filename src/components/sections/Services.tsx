@@ -28,10 +28,35 @@ const services = [
   },
 ];
 
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+
 export function Services() {
+  const containerRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "center start"] // Finishes expansion when center of section hits top of viewport? No.
+    // "start end": Top of section enters bottom of view.
+    // "start start": Top of section hits top of view.
+    // Let's try ["start 0.9", "start 0.1"] to see it "grow" as it takes center stage.
+    // Or standard ["start end", "start start"] is usually best for "becoming background".
+    // User wants "exactly like". The framer component often does: 
+    // transforms radius from X to 0 as it moves from Y to 0.
+  });
+  
+  // Refined for "exact" feel: starts transforming when it enters, finishes when it hits top.
+  const borderRadius = useTransform(scrollYProgress, [0, 1], ["2.5rem", "0rem"]);
+  const width = useTransform(scrollYProgress, [0, 1], ["92%", "100%"]); // Slightly smaller start width for more drama
+  const y = useTransform(scrollYProgress, [0, 1], ["2rem", "0rem"]); // Subtle paralax/rise effect
+
   return (
-    <section id="services" className="min-h-screen py-24 bg-secondary/30 w-full flex flex-col justify-center">
-      <div className="container px-4 md:px-6 w-full max-w-[95%]">
+    <section ref={containerRef} id="services" className="min-h-screen relative flex flex-col justify-start items-center bg-transparent">
+      <motion.div 
+        style={{ borderRadius, width, y }}
+        className="bg-secondary/30 w-full flex-grow py-24 px-4 md:px-6 flex flex-col justify-center overflow-hidden mx-auto shadow-2xl origin-top"
+      >
+        <div className="container mx-auto">
+          {/* Content unchanged */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
            <FadeIn>
              <Pill className="mb-4">Our Expertise</Pill>
@@ -72,7 +97,8 @@ export function Services() {
             </Card>
           ))}
         </FadeInStagger>
-      </div>
+        </div>
+      </motion.div>
     </section>
   );
 }

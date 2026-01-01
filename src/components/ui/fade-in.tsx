@@ -9,6 +9,7 @@ interface FadeInProps {
   delay?: number;
   duration?: number;
   yOffset?: number;
+  style?: React.CSSProperties | any; // allow motion values
 }
 
 export function FadeIn({ 
@@ -16,7 +17,8 @@ export function FadeIn({
   className = "", 
   delay = 0, 
   duration = 0.5,
-  yOffset = 20
+  yOffset = 20,
+  style
 }: FadeInProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -28,6 +30,7 @@ export function FadeIn({
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: yOffset }}
       transition={{ duration, delay, ease: "easeOut" }}
       className={className}
+      style={style}
     >
       {children}
     </motion.div>

@@ -26,33 +26,34 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-4 left-4 right-4 md:left-8 md:right-8 z-50 rounded-full transition-all duration-500 ease-in-out border ${
+      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-full transition-all duration-500 ease-in-out border max-w-[95vw] text-white ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md border-border shadow-md py-3"
-          : "bg-transparent border-transparent py-6"
+          ? "bg-background/90 backdrop-blur-xl border-border/50 shadow-md py-1.5 px-2"
+          : "bg-background/70 backdrop-blur-md border-transparent shadow-sm py-2.5 px-4"
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="/" className="z-50 transition-all duration-300">
-          {isScrolled ? (
-             <div className="h-10 w-10 rounded-full bg-white/40 dark:bg-black/40 backdrop-blur-md flex items-center justify-center border border-white/20">
-               <span className="font-serif font-bold text-foreground text-lg">KH</span>
-             </div>
-          ) : (
-             <span className="text-2xl font-serif font-bold tracking-tight text-foreground whitespace-nowrap">
-              Kurek Hersi
-             </span>
-          )}
+      <div className="flex items-center gap-8 md:gap-16 px-4">
+        <Link href="/" className="z-50 group">
+          <div className={`transition-all duration-500 ease-in-out overflow-hidden flex items-center ${isScrolled ? "w-12" : "w-48"}`}>
+            {isScrolled ? (
+               <div className="h-10 w-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-serif font-bold text-lg shadow-sm">
+                 KH
+               </div>
+            ) : (
+               <span className="text-2xl font-serif font-bold tracking-tight text-foreground whitespace-nowrap pl-2">
+                Kurek Hersi
+               </span>
+            )}
+          </div>
         </Link>
 
         <div className="hidden md:flex items-center gap-6">
           <nav className="flex items-center gap-6">
-             {/* Hide nav text on scroll for cleaner look if requested, or keep it. Keeping for now but ensuring contrast */}
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.name}
               </Link>
