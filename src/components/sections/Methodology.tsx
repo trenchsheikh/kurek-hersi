@@ -3,6 +3,7 @@
 import { FadeIn, FadeInStagger } from "@/components/ui/fade-in";
 import { Pill } from "@/components/ui/pill";
 import { ArrowUpRight } from "lucide-react";
+import { useScroll } from "framer-motion";
 
 const steps = [
   {
@@ -28,28 +29,44 @@ const steps = [
 ];
 
 export function Methodology() {
+  const { scrollYProgress } = useScroll();
+  // Mimic the hero's gap/border radius effect if desired, or just static rounded-3xl
+  // For consistency with specific "borders and colour theme" we'll use the Hero's Dark Green + Large Radius
+  
   return (
-    <section id="methodology" className="min-h-screen py-32 bg-background relative overflow-hidden w-full flex flex-col justify-center">
+    <section id="methodology" className="min-h-screen py-24 bg-background relative overflow-hidden w-full flex flex-col justify-center items-center">
       <div className="container px-4 md:px-6 w-full max-w-[95%]">
-        <div className="flex flex-col gap-16">
+        
+        {/* Main Grid: Left = Text Card (Hero Style), Right = Image Grid */}
+        <div className="grid lg:grid-cols-2 gap-6 min-h-[85vh]">
           
-          <div className="max-w-2xl">
-            <FadeIn>
-              <Pill className="mb-6">Our Process</Pill>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-foreground mb-6 leading-[0.9]">
-                Scientific <br/> Precision.
-              </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
-                A rigorous approach to B2B market research, ensuring every insight is verifiable, relevant, and actionable.
-              </p>
-            </FadeIn>
-          </div>
+          {/* Left Card - Text Content (Matching Hero Left Card Style) */}
+          <FadeIn className="bg-[oklch(0.20_0.05_150)] text-white rounded-[2.5rem] p-8 md:p-12 lg:p-16 flex flex-col justify-between relative overflow-hidden shadow-2xl h-full">
+              {/* Abstract Background Decoration */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              
+              <div>
+                <Pill className="mb-8 border-white/20 text-white bg-white/5 hover:bg-white/10">Our Process</Pill>
+                <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.9] mb-8">
+                  Scientific <br/> Precision.
+                </h2>
+                <p className="text-lg md:text-xl text-primary-foreground/80 font-light leading-relaxed max-w-md">
+                   We apply a rigorous, scientific approach to B2B market research. By strictly separating data collection from synthesis, we eliminate bias and ensure every insight is verifiable, relevant, and actionable.
+                </p>
+              </div>
 
-          <FadeInStagger className="grid md:grid-cols-2 gap-6 w-full">
+              {/* Decorative Element or Link at bottom */}
+              <div className="mt-12 pt-12 border-t border-white/10">
+                 <p className="text-sm font-medium text-white/60 uppercase tracking-widest">Methodology Framework</p>
+              </div>
+          </FadeIn>
+
+          {/* Right Side - Grid of Cards */}
+          <FadeInStagger className="grid grid-cols-1 gap-6 h-full">
             {steps.map((step, index) => (
               <div 
                 key={index} 
-                className="group relative h-[400px] rounded-[2.5rem] overflow-hidden cursor-pointer"
+                className="group relative h-[250px] lg:h-auto rounded-[2.5rem] overflow-hidden cursor-pointer"
               >
                 {/* Background Image */}
                 <div 
@@ -61,18 +78,21 @@ export function Methodology() {
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-500" />
                 
                 {/* Content Overlay */}
-                <div className="absolute inset-0 p-10 flex flex-col justify-end">
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
                   
                   {/* Icon/Arrow Top Right */}
-                  <div className="absolute top-8 right-8 h-12 w-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                    <ArrowUpRight className="h-6 w-6" />
+                  <div className="absolute top-6 right-6 h-10 w-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 z-20">
+                    <ArrowUpRight className="h-5 w-5" />
                   </div>
 
-                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <h3 className="text-3xl font-serif font-bold text-white mb-3">{step.title}</h3>
-                    <p className="text-white/80 text-lg font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                      {step.description}
-                    </p>
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 relative z-10">
+                   {/* Glass Background that appears on hover/always acts as container */}
+                    <div className="bg-black/0 group-hover:bg-black/60 group-hover:backdrop-blur-xl rounded-[1.5rem] p-2 group-hover:p-6 transition-all duration-500">
+                      <h3 className="text-2xl font-serif font-bold text-white mb-1 group-hover:mb-2 transition-all">{step.title}</h3>
+                      <p className="text-white/90 text-sm md:text-base font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75 h-0 group-hover:h-auto overflow-hidden">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
