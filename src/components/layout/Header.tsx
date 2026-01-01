@@ -26,19 +26,19 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-md border-b shadow-sm py-4"
+          ? "bg-background/90 backdrop-blur-md border-b py-3 shadow-sm"
           : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold tracking-tighter text-foreground">
+        <Link href="/" className="text-2xl font-serif font-bold tracking-tight text-foreground z-50">
           Kurek Hersi
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -48,7 +48,7 @@ export function Header() {
               {link.name}
             </Link>
           ))}
-          <Button asChild size="sm">
+          <Button asChild size="sm" className="rounded-full px-6">
             <Link href="#contact">Get Started</Link>
           </Button>
         </nav>
