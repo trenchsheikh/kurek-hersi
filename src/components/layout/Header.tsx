@@ -26,32 +26,43 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
+      className={`fixed top-4 left-4 right-4 md:left-8 md:right-8 z-50 rounded-full transition-all duration-500 ease-in-out border ${
         isScrolled
-          ? "bg-background/90 backdrop-blur-md border-b py-3 shadow-sm"
-          : "bg-transparent py-6"
+          ? "bg-background/95 backdrop-blur-md border-border shadow-md py-3"
+          : "bg-transparent border-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-serif font-bold tracking-tight text-foreground z-50">
-          Kurek Hersi
+        <Link href="/" className="z-50 transition-all duration-300">
+          {isScrolled ? (
+             <div className="h-10 w-10 rounded-full bg-white/40 dark:bg-black/40 backdrop-blur-md flex items-center justify-center border border-white/20">
+               <span className="font-serif font-bold text-foreground text-lg">KH</span>
+             </div>
+          ) : (
+             <span className="text-2xl font-serif font-bold tracking-tight text-foreground whitespace-nowrap">
+              Kurek Hersi
+             </span>
+          )}
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
-          <Button asChild size="sm" className="rounded-full px-6">
+        <div className="hidden md:flex items-center gap-6">
+          <nav className="flex items-center gap-6">
+             {/* Hide nav text on scroll for cleaner look if requested, or keep it. Keeping for now but ensuring contrast */}
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+
+          <Button asChild size="sm" className="rounded-full px-6 font-medium shadow-sm hover:shadow-md transition-all bg-foreground text-background hover:bg-foreground/90 ml-2">
             <Link href="#contact">Get Started</Link>
           </Button>
-        </nav>
+        </div>
 
         {/* Mobile Nav */}
         <Sheet>

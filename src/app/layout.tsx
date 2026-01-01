@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Plus_Jakarta_Sans, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const instrumentSerif = Instrument_Serif({ 
+const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-sans" });
+const dmSerif = DM_Serif_Display({ 
   weight: "400", 
   subsets: ["latin"], 
-  variable: "--font-instrument-serif",
-  style: "italic" 
+  variable: "--font-serif",
+  style: "normal" 
 });
 
 export const metadata: Metadata = {
-  title: "Kurek Hersi - Premier B2B Market Research",
-  description: "B2B Market Research for Professionals and Corporates.",
+  title: "Kurek Hersi - Strategic B2B Intelligence",
+  description: "Expert consulting that drives real growth.",
 };
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${instrumentSerif.variable} font-sans antialiased`}>
+      <body className={`${plusJakarta.variable} ${dmSerif.variable} font-sans antialiased bg-background text-foreground`}>
         {children}
       </body>
     </html>
