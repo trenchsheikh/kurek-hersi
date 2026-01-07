@@ -14,13 +14,15 @@ export function Footer() {
              </p>
            </div>
            
+           {/* Note */}
+           <div className="text-sm text-muted-foreground italic text-center md:text-left">
+             We typically work with a small number of clients at a time.
+           </div>
+
            {/* Links */}
            <nav className="flex gap-8">
              <Link href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                Privacy Policy
-             </Link>
-             <Link href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-               Terms of Service
              </Link>
              <Link href="#" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                LinkedIn

@@ -18,78 +18,101 @@ export function Header() {
   }, []);
 
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Methodology", href: "#methodology" },
-    { name: "Insights", href: "#stats" },
-    { name: "Contact", href: "#contact" },
+    { name: "The Decision", href: "#the-reality" },
+    { name: "Our Role", href: "#our-role" },
+    { name: "The Diagnostic", href: "#the-diagnostic" },
+    { name: "Fit", href: "#fit" },
+    { name: "Conversation", href: "#conversation" },
   ];
 
   return (
     <header
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-full transition-all duration-500 ease-in-out border max-w-[95vw] text-white ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b ${
         isScrolled
-          ? "bg-background/90 backdrop-blur-xl border-border/50 shadow-md py-1.5 px-2"
-          : "bg-background/70 backdrop-blur-md border-transparent shadow-sm py-2.5 px-4"
+          ? "bg-white/95 backdrop-blur-md border-black/5 shadow-sm py-4"
+          : "bg-white border-transparent py-6"
       }`}
     >
-      <div className="flex items-center gap-8 md:gap-16 px-4">
-        <Link href="/" className="z-50 group">
-          <div className={`transition-all duration-500 ease-in-out overflow-hidden flex items-center ${isScrolled ? "w-12" : "w-48"}`}>
-            {isScrolled ? (
-               <div className="h-10 w-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-serif font-bold text-lg shadow-sm">
-                 KH
-               </div>
-            ) : (
-               <span className="text-2xl font-serif font-bold tracking-tight text-foreground whitespace-nowrap pl-2">
-                Kurek Hersi
-               </span>
-            )}
-          </div>
+      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+        <Link href="/" className="z-50 group flex items-center">
+          <span className="text-xl md:text-2xl font-serif font-bold tracking-tight text-black whitespace-nowrap">
+            Kurek Hersi
+          </span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-6">
-          <nav className="flex items-center gap-6">
+        {/* Desktop Nav - Spaced out across full width */}
+        <nav className="hidden md:flex items-center flex-grow justify-center px-12 lg:px-24">
+          <div className="flex items-center justify-between w-full max-w-4xl">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm font-semibold text-black/60 hover:text-primary transition-colors tracking-widest font-sans uppercase"
+                onClick={(e) => {
+                   e.preventDefault();
+                   const el = document.querySelector(link.href);
+                   if (el) {
+                     const offset = 100;
+                     const bodyRect = document.body.getBoundingClientRect().top;
+                     const elementRect = el.getBoundingClientRect().top;
+                     const elementPosition = elementRect - bodyRect;
+                     const offsetPosition = elementPosition - offset;
+
+                     window.scrollTo({
+                       top: offsetPosition,
+                       behavior: "smooth"
+                     });
+                   }
+                }}
               >
                 {link.name}
               </Link>
             ))}
-          </nav>
+          </div>
+        </nav>
 
-          <Button asChild size="sm" className="rounded-full px-6 font-medium shadow-sm hover:shadow-md transition-all bg-foreground text-background hover:bg-foreground/90 ml-2">
-            <Link href="#contact">Get Started</Link>
+        <div className="flex items-center">
+          <Button asChild size="lg" className="rounded-full px-8 font-bold shadow-lg hover:shadow-xl transition-all bg-primary text-primary-foreground hover:scale-105 hidden md:flex">
+            <Link href="#conversation" onClick={(e) => {
+               e.preventDefault();
+               const el = document.querySelector("#conversation");
+               if (el) el.scrollIntoView({ behavior: "smooth" });
+            }}>
+              Start Conversation
+            </Link>
           </Button>
-        </div>
 
-        {/* Mobile Nav */}
-        <Sheet>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="h-6 w-6" />
-              <span className="sr-only">Toggle menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right">
-            <nav className="flex flex-col gap-4 mt-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-lg font-medium hover:text-primary transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <Button asChild className="mt-4">
-                <Link href="#contact">Get Started</Link>
+          {/* Mobile Nav Trigger */}
+          <Sheet>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="icon" className="text-black hover:bg-black/5">
+                <Menu className="h-7 w-7" />
+                <span className="sr-only">Toggle menu</span>
               </Button>
-            </nav>
-          </SheetContent>
-        </Sheet>
+            </SheetTrigger>
+            <SheetContent side="top" className="w-full h-auto bg-white border-b border-black/5">
+              <nav className="flex flex-col items-center gap-6 py-10">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="text-2xl font-serif font-bold text-black hover:text-primary transition-colors"
+                    onClick={() => {
+                      const el = document.querySelector(link.href);
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
+                    }}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+                <div className="h-px w-20 bg-black/10 my-4" />
+                <Button asChild className="w-full max-w-xs rounded-full h-14 text-lg font-bold">
+                  <Link href="#conversation">Start Conversation</Link>
+                </Button>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   );

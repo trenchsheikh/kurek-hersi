@@ -26,9 +26,9 @@ export function FadeIn({
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: yOffset }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: yOffset }}
-      transition={{ duration, delay, ease: "easeOut" }}
+      initial={{ opacity: 0, y: yOffset, scale: 0.95, filter: "blur(4px)" }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" } : { opacity: 0, y: yOffset, scale: 0.95, filter: "blur(4px)" }}
+      transition={{ duration: 0.8, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
       className={className}
       style={style}
     >
@@ -63,4 +63,25 @@ export function FadeInStagger({
       {children}
     </motion.div>
   );
+}
+
+// Add a standalone wrapper for staggered children to use
+export function FadeInChild({ children, className="" }: { children: React.ReactNode, className?: string }) {
+  return (
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 20, filter: "blur(4px)", scale: 0.95 },
+        visible: { 
+          opacity: 1, 
+          y: 0, 
+          filter: "blur(0px)", 
+          scale: 1,
+          transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] } 
+        }
+      }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  )
 }

@@ -1,9 +1,11 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { Services } from "@/components/sections/Services";
-import { Methodology } from "@/components/sections/Methodology";
-import { StatsGraph } from "@/components/sections/StatsGraph";
+import { LogoCarousel } from "@/components/sections/LogoCarousel";
+import { TheReality } from "@/components/sections/TheReality";
+import { OurRole } from "@/components/sections/OurRole";
+import { TheDiagnostic } from "@/components/sections/TheDiagnostic";
+import { Fit } from "@/components/sections/Fit";
 import { CTA } from "@/components/sections/CTA";
 
 export default function Home() {
@@ -12,9 +14,11 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <Services />
-        <Methodology />
-        <StatsGraph />
+        <LogoCarousel />
+        <TheReality />
+        <OurRole />
+        <TheDiagnostic />
+        <Fit />
         <CTA />
       </main>
       <Footer />

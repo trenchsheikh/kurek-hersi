@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, ArrowRight } from "lucide-react";
-import { FadeIn, FadeInStagger } from "@/components/ui/fade-in";
+import { FadeIn, FadeInStagger, FadeInChild } from "@/components/ui/fade-in";
 import { Pill } from "@/components/ui/pill";
 
 const services = [
@@ -73,28 +73,30 @@ export function Services() {
 
         <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {services.map((service, i) => (
-            <Card key={service.title} className="border-none shadow-none bg-background rounded-[2rem] p-8 hover:shadow-xl transition-all duration-500 group">
-              <CardHeader className="p-0 mb-6">
-                <div className="flex justify-between items-start mb-4">
-                  <div className="h-12 w-12 rounded-full bg-secondary flex items-center justify-center text-lg font-bold font-serif text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    {i + 1}
+            <FadeInChild key={service.title}>
+              <Card className="border-none shadow-none bg-background rounded-[2rem] p-8 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 group cursor-pointer h-full">
+                <CardHeader className="p-0 mb-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="h-12 w-12 rounded-full bg-secondary flex items-center justify-center text-lg font-bold font-serif text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-500">
+                      {i + 1}
+                    </div>
+                    <ArrowRight className="text-muted-foreground group-hover:text-primary transition-all duration-500 -rotate-45 group-hover:rotate-0" />
                   </div>
-                  <ArrowRight className="text-muted-foreground group-hover:text-primary transition-colors -rotate-45 group-hover:rotate-0 transform duration-300" />
-                </div>
-                <CardTitle className="text-3xl font-serif mb-2">{service.title}</CardTitle>
-                <p className="text-muted-foreground text-lg">{service.description}</p>
-              </CardHeader>
-              <CardContent className="p-0 pt-6 border-t border-border/50">
-                <ul className="space-y-3">
-                  {service.features.map(feature => (
-                    <li key={feature} className="flex items-center gap-3 text-sm font-medium text-foreground/80">
-                      <CheckCircle2 className="h-4 w-4 text-accent fill-accent/20" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+                  <CardTitle className="text-3xl font-serif mb-2">{service.title}</CardTitle>
+                  <p className="text-muted-foreground text-lg">{service.description}</p>
+                </CardHeader>
+                <CardContent className="p-0 pt-6 border-t border-border/50">
+                  <ul className="space-y-3">
+                    {service.features.map(feature => (
+                      <li key={feature} className="flex items-center gap-3 text-sm font-medium text-foreground/80">
+                        <CheckCircle2 className="h-4 w-4 text-accent fill-accent/20" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </FadeInChild>
           ))}
         </FadeInStagger>
         </div>
