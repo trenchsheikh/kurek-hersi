@@ -5,6 +5,7 @@ import { LogoCarousel } from "@/components/sections/LogoCarousel";
 import { TheRealitySection as TheReality } from "@/components/sections/TheReality";
 import { OurRole } from "@/components/sections/OurRole";
 import { TheDiagnostic } from "@/components/sections/TheDiagnostic";
+import { FitSection as Fit } from "@/components/sections/Fit";
 import { Team } from "@/components/sections/Team";
 import { CTA } from "@/components/sections/CTA";
 
@@ -29,6 +30,7 @@ export default function Home() {
             "Confidence to move forward or stop early"
           ]} 
         />
+        <Fit />
         <CTA />
       </main>
       <Footer />
