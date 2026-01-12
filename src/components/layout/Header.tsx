@@ -19,10 +19,10 @@ export function Header() {
   }, []);
 
   const navLinks = [
-    { name: "The Decision", href: "#the-reality" },
-    { name: "Team", href: "#team" },
-    { name: "Our Role", href: "#our-role" },
-    { name: "The Diagnostic", href: "#the-diagnostic" },
+    { name: "Decision", href: "#the-reality" },
+    { name: "Role", href: "#our-role" },
+    { name: "Diagnostic", href: "#the-diagnostic" },
+    { name: "Fit", href: "#fit" },
   ];
 
   const scrollToSection = (e: React.MouseEvent, href: string) => {
