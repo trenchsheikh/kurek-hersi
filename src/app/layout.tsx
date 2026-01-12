@@ -15,6 +15,9 @@ import { ScrollBeam } from "@/components/ui/scroll-beam";
 export const metadata: Metadata = {
   title: "Kurek Hersi - Strategic B2B Intelligence",
   description: "Expert consulting that drives real growth.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
