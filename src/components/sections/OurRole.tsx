@@ -25,9 +25,7 @@ export function OurRole() {
                   <p className="font-serif text-lg md:text-xl text-white font-medium italic">
                     Independence and focus are deliberate.
                   </p>
-                  <div className="text-[10px] font-mono text-white/20 tracking-widest uppercase">
-                    // CORE_PROTOCOL //
-                  </div>
+
                 </div>
               </div>
             </FadeIn>
@@ -36,10 +34,7 @@ export function OurRole() {
 
           <div className="order-1 lg:order-2">
             <FadeIn delay={0.2}>
-              <div className="inline-flex items-center gap-2 mb-6">
-                <span className="h-px w-8 bg-white/20" />
-                <p className="text-[10px] font-medium tracking-[0.4em] text-white/40 uppercase font-mono">DEFINITION: OUR CORE</p>
-              </div>
+
               <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.1] tracking-tight">
                 We are not <br/> 
                 <span className="text-white/30 italic font-light">vendors, implementers,</span> <br/> 

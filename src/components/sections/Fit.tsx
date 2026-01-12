@@ -22,11 +22,7 @@ export function FitSection() {
       
       <div className="container px-4 md:px-6 mx-auto max-w-5xl relative z-10">
         <FadeIn className="text-center mb-24">
-          <div className="inline-flex items-center gap-3 mb-8">
-            <span className="text-[10px] font-mono font-bold text-black/20">[FILTER_LOG: CRITERIA]</span>
-            <div className="h-px w-8 bg-black/10" />
-            <p className="text-[10px] font-medium tracking-[0.4em] text-black/40 uppercase font-mono">ALIGNMENT CHECK</p>
-          </div>
+
           <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium text-black leading-tight tracking-tight">
             Fit
           </h2>
@@ -35,12 +31,9 @@ export function FitSection() {
         <div className="grid md:grid-cols-2 gap-px bg-black/5 overflow-hidden border border-black/5">
           {/* Positive Alignment */}
           <div className="bg-white p-12 lg:p-16 relative group">
-            <div className="mb-12 flex items-center justify-between">
-              <span className="text-[10px] font-mono font-bold text-black/40 uppercase tracking-widest">
-                // This work is typically relevant when:
-              </span>
-              <div className="h-2 w-2 rounded-full bg-black/10" />
-            </div>
+                <div className="mb-12 flex items-center justify-between">
+                  <div className="h-2 w-2 rounded-full bg-black/10" />
+                </div>
             
             <FadeInStagger className="space-y-8">
               {relevantPoints.map((point, i) => (
@@ -54,17 +47,12 @@ export function FitSection() {
             </FadeInStagger>
             
             {/* Technical Detail */}
-            <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-              <div className="text-[9px] font-mono text-black/20">TARGET_PROFILE_MATCH</div>
-            </div>
+
           </div>
 
           {/* Negative Alignment */}
           <div className="bg-black/[0.01] p-12 lg:p-16 relative group">
              <div className="mb-12 flex items-center justify-between">
-              <span className="text-[10px] font-mono font-bold text-black/20 uppercase tracking-widest">
-                // It is not relevant when:
-              </span>
               <div className="h-2 w-2 border border-black/10 rounded-full" />
             </div>
 
@@ -80,17 +68,13 @@ export function FitSection() {
             </FadeInStagger>
 
              {/* Technical Detail */}
-             <div className="absolute bottom-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-              <div className="text-[9px] font-mono text-black/20">EXCLUSION_THRESHOLD_HIT</div>
-            </div>
+
           </div>
         </div>
 
         {/* Technical Summary Footer */}
         <div className="mt-20 flex flex-col md:flex-row items-center justify-between border-t border-black/5 pt-8 text-center md:text-left gap-6">
-           <p className="text-[10px] font-mono text-black/30 tracking-[0.2em] uppercase">
-             Strategic Pre-Qualification Protocol // 2024.1
-           </p>
+
            <div className="flex gap-1">
               {[1, 2, 3, 4, 5].map(i => (
                 <div key={i} className={`h-1 w-1 ${i <= 3 ? 'bg-black/20' : 'bg-black/5'}`} />

@@ -36,11 +36,7 @@ export function CTA() {
       
       <div className="container px-4 md:px-6 mx-auto max-w-5xl relative z-10 text-center">
         <FadeIn>
-          <div className="inline-flex items-center gap-3 mb-10">
-            <div className="h-px w-12 bg-black/10" />
-            <p className="text-[10px] font-medium tracking-[0.4em] text-black/40 uppercase font-mono">// THE CONVERSATION //</p>
-            <div className="h-px w-12 bg-black/10" />
-          </div>
+
           
           <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium mb-12 leading-[1.1] tracking-tight text-black max-w-4xl mx-auto">
             The initial conversation is <br className="hidden md:block"/> 
@@ -60,12 +56,7 @@ export function CTA() {
               Request a strategic diagnostic conversation
             </Button>
             
-            <div className="flex flex-col items-center gap-4">
-              <div className="h-12 w-px bg-black/10" />
-              <p className="text-[10px] font-mono text-black/30 tracking-[0.3em] uppercase">
-                There is no obligation.
-              </p>
-            </div>
+
           </div>
         </FadeIn>
       </div>

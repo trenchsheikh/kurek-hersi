@@ -17,11 +17,7 @@ export function TheRealitySection() {
       
       <div className="container px-4 md:px-6 mx-auto max-w-5xl relative z-10 text-center">
         <FadeIn>
-          <div className="inline-flex items-center gap-3 mb-10">
-            <span className="text-[10px] font-mono font-bold text-black/20">[SCAN_INITIATED]</span>
-            <div className="h-px w-12 bg-black/10" />
-            <p className="text-[10px] font-medium tracking-[0.4em] text-black/40 uppercase font-mono">STATUS: DETECTED</p>
-          </div>
+
           <h3 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium text-black leading-[1.1] tracking-tight mb-24 max-w-4xl mx-auto">
             Most teams are deciding <br/> 
             <span className="text-black/30 italic font-light">under pressure, not clarity.</span>
@@ -33,9 +29,7 @@ export function TheRealitySection() {
             <FadeInChild key={i}>
               <div className="group relative p-10 bg-white hover:bg-black transition-all duration-700 h-full">
                 <div className="flex flex-col items-center justify-center gap-6 h-full">
-                  <span className="text-[10px] font-mono font-bold text-black/20 group-hover:text-white/40">
-                    // ID: {point.id} //
-                  </span>
+
                   <p className="text-xl md:text-2xl font-sans font-light text-black group-hover:text-white transition-colors tracking-tight leading-snug">
                     {point.text}
                   </p>
@@ -55,9 +49,7 @@ export function TheRealitySection() {
             <p className="font-serif text-3xl md:text-4xl text-black font-medium tracking-tight">
               This is where mistakes compound.
             </p>
-            <div className="text-[10px] font-mono text-black/20 tracking-widest uppercase mt-4">
-              // REASONING_ENGINE_ACTIVE //
-            </div>
+
           </div>
         </FadeIn>
       </div>

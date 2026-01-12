@@ -13,14 +13,7 @@ export function TheDiagnostic() {
         <div className="flex flex-col lg:flex-row gap-20 items-center">
           <div className="w-full lg:w-5/12">
             <FadeIn>
-              <div className="inline-flex items-center gap-2 mb-8">
-                <div className="flex gap-1">
-                  <div className="h-1 w-1 bg-black/40" />
-                  <div className="h-1 w-1 bg-black/20" />
-                  <div className="h-1 w-1 bg-black/10" />
-                </div>
-                <p className="text-[10px] font-medium tracking-[0.4em] text-black/40 uppercase font-mono">ENCRYPTED DIAGNOSTIC</p>
-              </div>
+
               <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium text-black leading-[1.05] tracking-tight">
                 Before execution, <br className="hidden md:block"/> 
                 <span className="text-black/30 italic font-light">there is a diagnostic decision.</span>
@@ -34,12 +27,7 @@ export function TheDiagnostic() {
                 <div className="absolute top-0 right-0 w-24 h-24 border-t border-r border-black/10 pointer-events-none" />
                 <div className="absolute -left-1 top-1/4 w-2 h-16 bg-black/5" />
                 
-                <div className="mb-10 flex items-center justify-between">
-                  <span className="text-[10px] font-mono font-bold text-black/20 uppercase tracking-widest">
-                    [SYSTEM_CHECK: CLARITY_V4]
-                  </span>
-                  <div className="h-2 w-2 rounded-full bg-black/10" />
-                </div>
+
 
                 <p className="text-xl md:text-3xl font-sans font-light text-black/70 leading-relaxed tracking-tight mb-16">
                   We start by clarifying what <span className="text-black font-medium underline underline-offset-8 decoration-black/10">decision needs to be made</span> and what is at stake, before teams move to platforms, pilots, or hiring.
@@ -49,9 +37,7 @@ export function TheDiagnostic() {
                   <p className="font-serif text-xl md:text-2xl text-black font-medium">
                     This work stands on its own.
                   </p>
-                  <div className="text-[10px] font-mono text-black/40 bg-black/5 px-2 py-1 rounded">
-                    PROTOCOL_OMNI
-                  </div>
+
                 </div>
               </div>
             </FadeIn>
@@ -72,9 +58,7 @@ export function TheDiagnostic() {
                 </div>
               ))}
            </div>
-           <p className="text-[9px] font-mono text-black/20 tracking-widest uppercase">
-             Decision Analytics Protocol // v.4.0
-           </p>
+
         </div>
       </div>
     </section>
