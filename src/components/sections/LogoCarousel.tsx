@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { FadeIn } from "@/components/ui/fade-in";
 
 // Verified SVG URLs (Wikimedia/CDN)
@@ -28,69 +27,28 @@ const technologies = [
 
 export function LogoCarousel() {
   return (
-    <section className="py-24 bg-background w-full flex justify-center items-center overflow-hidden">
-      <div className="w-full max-w-[95%] flex flex-col gap-12">
+    <section className="py-20 bg-white w-full flex justify-center items-center overflow-hidden border-b border-black/5">
+      <div className="w-full max-w-6xl px-4 flex flex-col gap-12">
         
         <div className="text-center">
           <FadeIn>
-            <p className="text-sm font-bold tracking-widest text-muted-foreground uppercase mb-8">
-               Trusted by Leaders, Powered by Innovation
+            <p className="text-[10px] font-bold tracking-[0.3em] text-black/40 uppercase mb-12">
+               LEADERS IN THE FIELD USE KUREK|HERSI
             </p>
           </FadeIn>
         </div>
 
-        <div className="relative flex flex-col gap-12">
-            {/* Row 1: Companies (Left) */}
-            <div className="flex overflow-hidden mask-gradient">
-              <motion.div 
-                className="flex gap-16 md:gap-24 items-center flex-shrink-0"
-                initial={{ x: 0 }}
-                animate={{ x: "-50%" }}
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-              >
-                {[...companies, ...companies].map((company, i) => (
-                  <div key={`${company.name}-${i}`} className="h-20 w-32 md:w-40 flex items-center justify-center relative px-4">
-                     {/* 
-                         Company Logos: 
-                         Force White Silhouette (invert brightness-0) for contrast on dark bg.
-                         Opacity 50% -> 100% on hover.
-                     */}
-                     <img 
-                       src={company.logo} 
-                       alt={company.name} 
-                       className="max-h-full max-w-full object-contain filter brightness-0 invert opacity-50 hover:opacity-100 transition-opacity duration-300" 
-                     />
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-
-            {/* Row 2: Technologies (Right) */}
-            <div className="flex overflow-hidden mask-gradient">
-              <motion.div 
-                className="flex gap-16 md:gap-24 items-center flex-shrink-0"
-                initial={{ x: "-50%" }}
-                animate={{ x: "0%" }}
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-              >
-                {[...technologies, ...technologies].map((tech, i) => (
-                  <div key={`${tech.name}-${i}`} className="h-16 w-32 md:w-40 flex items-center justify-center relative px-4">
-                     {/* 
-                        Tech Logos:
-                        Also forced to White Silhouette for consistency and visibility on dark background.
-                        (Original colors often include black text which would be invisible).
-                     */}
-                     <img 
-                       src={tech.logo} 
-                       alt={tech.name} 
-                       className="max-h-full max-w-full object-contain filter brightness-0 invert opacity-50 hover:opacity-100 transition-opacity duration-300" 
-                     />
-                  </div>
-                ))}
-              </motion.div>
-            </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-12 gap-y-16 items-center justify-items-center opacity-40 grayscale hover:opacity-100 transition-opacity duration-700">
+           {companies.map((company) => (
+             <div key={company.name} className="h-8 w-32 flex items-center justify-center">
+               <img 
+                 src={company.logo} 
+                 alt={company.name} 
+                 className="max-h-full max-w-full object-contain brightness-0" 
+               />
+             </div>
+           ))}
         </div>
-
       </div>
     </section>
   );

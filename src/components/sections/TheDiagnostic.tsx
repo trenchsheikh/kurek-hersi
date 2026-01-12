@@ -1,98 +1,80 @@
 "use client";
 
 import { FadeIn } from "@/components/ui/fade-in";
-import { Pill } from "@/components/ui/pill";
 import { motion } from "framer-motion";
 
 export function TheDiagnostic() {
   return (
-    <section id="the-diagnostic" className="py-40 bg-background relative overflow-hidden w-full flex justify-center items-center">
-      <div className="container px-4 md:px-6 w-full max-w-[95%]">
-        <div className="grid lg:grid-cols-2 gap-32 items-center">
-          
-          <FadeIn className="max-w-xl">
-            <Pill className="mb-8 font-sans">The Diagnostic</Pill>
-            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground mb-10 leading-[0.9] tracking-tight">
-              Before execution, <br/> there is a <br/> diagnostic.
-            </h2>
-            <p className="text-xl lg:text-2xl text-muted-foreground font-sans font-light leading-relaxed mb-12">
-              We start by clarifying what decision needs to be made and what is at stake, before teams move to platforms, pilots, or hiring.
-            </p>
-            <div className="pl-10 border-l border-accent/30 py-2">
-              <p className="font-serif text-3xl text-foreground/80 italic tracking-tight">
-                This work stands on its own.
-              </p>
-            </div>
-          </FadeIn>
+    <section id="the-diagnostic" className="relative py-32 bg-white w-full flex justify-center overflow-hidden border-b border-black/5">
+      {/* Tech Grid Background (Light) */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:linear-gradient(to_bottom,transparent,black,transparent)]" />
 
-          {/* Animating Visual - Refined Chart Style */}
-          <FadeIn delay={0.2} className="relative w-full h-[500px] bg-secondary/30 rounded-[3rem] p-12 flex flex-col shadow-2xl overflow-hidden border border-white/5 group">
-             <div className="absolute top-0 right-0 w-80 h-80 bg-accent/3 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-             
-             <div className="flex justify-between items-start mb-16 z-10">
-               <div>
-                 <h3 className="text-xs font-bold text-white/40 uppercase tracking-[0.2em] mb-2 font-sans">Decision Clarity Index</h3>
-                 <div className="flex items-baseline gap-3">
-                   <span className="text-4xl font-serif font-bold text-white">High Stakes</span>
-                 </div>
-               </div>
-               
-               <div className="h-12 w-12 rounded-full bg-white/3 flex items-center justify-center border border-white/5 transition-colors group-hover:border-accent/20">
-                 <div className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-               </div>
-             </div>
+      <div className="container px-4 md:px-6 mx-auto max-w-6xl relative z-10">
+        <div className="flex flex-col lg:flex-row gap-20 items-center">
+          <div className="w-full lg:w-5/12">
+            <FadeIn>
+              <div className="inline-flex items-center gap-2 mb-8">
+                <div className="flex gap-1">
+                  <div className="h-1 w-1 bg-black/40" />
+                  <div className="h-1 w-1 bg-black/20" />
+                  <div className="h-1 w-1 bg-black/10" />
+                </div>
+                <p className="text-[10px] font-medium tracking-[0.4em] text-black/40 uppercase font-mono">ENCRYPTED DIAGNOSTIC</p>
+              </div>
+              <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium text-black leading-[1.05] tracking-tight">
+                Before execution, <br className="hidden md:block"/> 
+                <span className="text-black/30 italic font-light">there is a diagnostic decision.</span>
+              </h2>
+            </FadeIn>
+          </div>
 
-             <div className="relative flex-grow w-full">
-                {/* SVG Chart adapted from StatsGraph */}
-                <svg className="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 400 200" preserveAspectRatio="none">
-                   <defs>
-                     <linearGradient id="diagGradient" x1="0" y1="0" x2="0" y2="1">
-                       <stop offset="0%" stopColor="var(--color-accent)" stopOpacity="0.15" />
-                       <stop offset="100%" stopColor="var(--color-accent)" stopOpacity="0" />
-                     </linearGradient>
-                   </defs>
-
-                   {/* Diagnostic Path */}
-                   <motion.path
-                     d="M 0,180 C 100,180 150,150 200,80 C 250,10 350,10 400,10"
-                     fill="none"
-                     stroke="currentColor"
-                     className="text-accent/60"
-                     strokeWidth="4"
-                     strokeLinecap="round"
-                     initial={{ pathLength: 0, opacity: 0 }}
-                     whileInView={{ pathLength: 1, opacity: 1 }}
-                     viewport={{ amount: 0.3, once: true }}
-                     transition={{ duration: 3, ease: "anticipate" }}
-                   />
-
-                   <motion.path
-                     d="M 0,180 C 100,180 150,150 200,80 C 250,10 350,10 400,10 L 400,200 L 0,200 Z"
-                     fill="url(#diagGradient)"
-                     initial={{ opacity: 0 }}
-                     whileInView={{ opacity: 1 }}
-                     transition={{ delay: 1, duration: 1.5 }}
-                   />
-                </svg>
+          <div className="w-full lg:w-7/12 relative">
+            <FadeIn delay={0.2}>
+              <div className="p-8 md:p-16 border border-black/5 bg-black/[0.01] rounded-sm relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-24 h-24 border-t border-r border-black/10 pointer-events-none" />
+                <div className="absolute -left-1 top-1/4 w-2 h-16 bg-black/5" />
                 
-                <motion.div 
-                  className="absolute left-[50%] top-[35%] -translate-x-1/2 bg-accent text-accent-foreground px-6 py-3 rounded-full text-sm font-bold shadow-2xl flex items-center gap-3 font-sans"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.8 }}
-                >
-                  Diagnostic Decision
-                </motion.div>
-             </div>
+                <div className="mb-10 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold text-black/20 uppercase tracking-widest">
+                    [SYSTEM_CHECK: CLARITY_V4]
+                  </span>
+                  <div className="h-2 w-2 rounded-full bg-black/10" />
+                </div>
 
-             <div className="flex justify-between mt-12 text-[10px] font-bold text-white/20 uppercase tracking-[0.3em] px-1 font-sans">
-               <span>Identification</span>
-               <span>Analysis</span>
-               <span>Clarity</span>
-               <span>Strategy</span>
-             </div>
-          </FadeIn>
+                <p className="text-xl md:text-3xl font-sans font-light text-black/70 leading-relaxed tracking-tight mb-16">
+                  We start by clarifying what <span className="text-black font-medium underline underline-offset-8 decoration-black/10">decision needs to be made</span> and what is at stake, before teams move to platforms, pilots, or hiring.
+                </p>
 
+                <div className="flex items-center justify-between pt-10 border-t border-black/5">
+                  <p className="font-serif text-xl md:text-2xl text-black font-medium">
+                    This work stands on its own.
+                  </p>
+                  <div className="text-[10px] font-mono text-black/40 bg-black/5 px-2 py-1 rounded">
+                    PROTOCOL_OMNI
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+
+        {/* Technical Footer Detail */}
+        <div className="mt-24 flex items-center justify-between border-t border-black/5 pt-8">
+           <div className="flex gap-4">
+              {[1, 2, 3].map(i => (
+                <div key={i} className="h-1 w-8 bg-black/5 overflow-hidden">
+                  <motion.div 
+                    className="h-full bg-black/20"
+                    initial={{ x: "-100%" }}
+                    whileInView={{ x: "0%" }}
+                    transition={{ delay: 0.5 + (i * 0.2), duration: 1 }}
+                  />
+                </div>
+              ))}
+           </div>
+           <p className="text-[9px] font-mono text-black/20 tracking-widest uppercase">
+             Decision Analytics Protocol // v.4.0
+           </p>
         </div>
       </div>
     </section>

@@ -1,11 +1,12 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Hero } from "@/components/sections/Hero";
+import { HeroSection as Hero } from "@/components/sections/Hero";
 import { LogoCarousel } from "@/components/sections/LogoCarousel";
-import { TheReality } from "@/components/sections/TheReality";
+import { TheRealitySection as TheReality } from "@/components/sections/TheReality";
 import { OurRole } from "@/components/sections/OurRole";
 import { TheDiagnostic } from "@/components/sections/TheDiagnostic";
-import { Fit } from "@/components/sections/Fit";
+import { FitSection as Fit } from "@/components/sections/Fit";
+import { Team } from "@/components/sections/Team";
 import { CTA } from "@/components/sections/CTA";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <LogoCarousel />
         <TheReality />
+        <Team />
         <OurRole />
         <TheDiagnostic />
         <Fit />

@@ -1,62 +1,63 @@
 "use client";
 
 import { FadeIn, FadeInStagger, FadeInChild } from "@/components/ui/fade-in";
-import { AlertCircle, Users, TrendingDown } from "lucide-react";
 
-export function TheReality() {
+export function TheRealitySection() {
   const points = [
-    { 
-      title: "Vendor narratives conflict.", 
-      icon: <AlertCircle className="h-6 w-6 text-accent" />,
-      description: "Conflicting signals from the market make impartial evaluation nearly impossible. This creates a paralysis that stalls innovation."
-    },
-    { 
-      title: "Internal alignment is assumed.", 
-      icon: <Users className="h-6 w-6 text-accent" />,
-      description: "Divergent stakeholder priorities often block unified strategic execution. Consensus is rarely the same as clarity."
-    },
-    { 
-      title: "The cost of being wrong is higher than it appears.", 
-      icon: <TrendingDown className="h-6 w-6 text-accent" />,
-      description: "Strategic missteps lead to compounding technical debt and lost momentum. The hidden costs of reversals are often devastating."
-    },
+    { id: "01", text: "Vendor narratives conflict." },
+    { id: "02", text: "Internal alignment is assumed." },
+    { id: "03", text: "The cost of being wrong is higher than it appears." }
   ];
 
   return (
-    <section id="the-reality" className="py-32 bg-background w-full flex justify-center">
-      <div className="container px-4 md:px-6 mx-auto max-w-6xl">
-        <FadeIn className="mb-20">
-          <h2 className="text-xs font-bold tracking-[0.2em] text-accent uppercase mb-6 font-sans">The Reality</h2>
-          <h3 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-[1.1] max-w-4xl tracking-tight">
-            Most teams are deciding under pressure, not clarity.
+    <section id="the-reality" className="relative py-40 bg-white w-full flex justify-center overflow-hidden border-b border-black/5">
+      {/* Centered Tech Decorative Element */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-black/10 via-black/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:60px_60px]" />
+      
+      <div className="container px-4 md:px-6 mx-auto max-w-5xl relative z-10 text-center">
+        <FadeIn>
+          <div className="inline-flex items-center gap-3 mb-10">
+            <span className="text-[10px] font-mono font-bold text-black/20">[SCAN_INITIATED]</span>
+            <div className="h-px w-12 bg-black/10" />
+            <p className="text-[10px] font-medium tracking-[0.4em] text-black/40 uppercase font-mono">STATUS: DETECTED</p>
+          </div>
+          <h3 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium text-black leading-[1.1] tracking-tight mb-24 max-w-4xl mx-auto">
+            Most teams are deciding <br/> 
+            <span className="text-black/30 italic font-light">under pressure, not clarity.</span>
           </h3>
         </FadeIn>
 
-        <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
+        <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-px bg-black/5 border-y border-black/5 mb-24">
           {points.map((point, i) => (
             <FadeInChild key={i}>
-              <div className="group h-full flex flex-col pt-8 border-t border-white/5 hover:border-accent/30 transition-colors duration-500">
-                <div className="h-12 w-12 rounded-full bg-secondary/30 flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500 text-accent">
-                  {point.icon}
+              <div className="group relative p-10 bg-white hover:bg-black transition-all duration-700 h-full">
+                <div className="flex flex-col items-center justify-center gap-6 h-full">
+                  <span className="text-[10px] font-mono font-bold text-black/20 group-hover:text-white/40">
+                    // ID: {point.id} //
+                  </span>
+                  <p className="text-xl md:text-2xl font-sans font-light text-black group-hover:text-white transition-colors tracking-tight leading-snug">
+                    {point.text}
+                  </p>
                 </div>
-                <h4 className="text-xl font-sans font-medium mb-4 text-foreground leading-snug tracking-tight">
-                  {point.title}
-                </h4>
-                <p className="text-muted-foreground font-sans font-light leading-relaxed text-lg">
-                  {point.description}
-                </p>
+                {/* Decorative corner accent */}
+                <div className="absolute bottom-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="w-4 h-4 border-b border-r border-white/40" />
+                </div>
               </div>
             </FadeInChild>
           ))}
         </FadeInStagger>
 
         <FadeIn delay={0.4}>
-          <div className="flex gap-8 items-center max-w-3xl">
-            <div className="h-px flex-grow bg-accent/20" />
-            <p className="font-serif text-2xl md:text-3xl text-foreground/70 italic leading-relaxed text-center px-4">
+          <div className="inline-flex flex-col items-center gap-4">
+            <div className="h-12 w-px bg-black/20 animate-bounce" />
+            <p className="font-serif text-3xl md:text-4xl text-black font-medium tracking-tight">
               This is where mistakes compound.
             </p>
-            <div className="h-px flex-grow bg-accent/20" />
+            <div className="text-[10px] font-mono text-black/20 tracking-widest uppercase mt-4">
+              // REASONING_ENGINE_ACTIVE //
+            </div>
           </div>
         </FadeIn>
       </div>

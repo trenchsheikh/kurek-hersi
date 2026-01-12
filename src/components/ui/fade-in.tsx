@@ -9,17 +9,17 @@ interface FadeInProps {
   delay?: number;
   duration?: number;
   yOffset?: number;
-  style?: React.CSSProperties | any; // allow motion values
+  style?: React.CSSProperties | any;
 }
 
-export function FadeIn({ 
+export const FadeIn = ({ 
   children, 
   className = "", 
   delay = 0, 
   duration = 0.5,
   yOffset = 20,
   style
-}: FadeInProps) {
+}: FadeInProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -35,9 +35,9 @@ export function FadeIn({
       {children}
     </motion.div>
   );
-}
+};
 
-export function FadeInStagger({ 
+export const FadeInStagger = ({ 
   children, 
   className = "",
   staggerDelay = 0.1
@@ -45,7 +45,7 @@ export function FadeInStagger({
   children: React.ReactNode; 
   className?: string; 
   staggerDelay?: number;
-}) {
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -63,10 +63,9 @@ export function FadeInStagger({
       {children}
     </motion.div>
   );
-}
+};
 
-// Add a standalone wrapper for staggered children to use
-export function FadeInChild({ children, className="" }: { children: React.ReactNode, className?: string }) {
+export const FadeInChild = ({ children, className="" }: { children: React.ReactNode, className?: string }) => {
   return (
     <motion.div
       variants={{

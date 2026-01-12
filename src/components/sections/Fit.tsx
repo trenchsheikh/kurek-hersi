@@ -1,10 +1,8 @@
 "use client";
 
 import { FadeIn, FadeInStagger, FadeInChild } from "@/components/ui/fade-in";
-import { Check, X } from "lucide-react";
-import { Pill } from "@/components/ui/pill";
 
-export function Fit() {
+export function FitSection() {
   const relevantPoints = [
     "Senior leadership is directly involved",
     "A material AI decision is approaching",
@@ -18,61 +16,86 @@ export function Fit() {
   ];
 
   return (
-    <section id="fit" className="py-40 bg-secondary/30 w-full flex justify-center overflow-hidden relative">
-      <div className="container px-4 md:px-6 mx-auto max-w-6xl z-10">
-        <FadeIn className="mb-24 text-center">
-          <Pill className="mb-8 font-sans">Engagement Fit</Pill>
-          <h3 className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground tracking-tight leading-[1.1]">
-            Qualifications for <br/> Diagnostic Work
-          </h3>
+    <section id="fit" className="relative py-40 bg-white w-full flex justify-center overflow-hidden border-b border-black/5">
+      {/* Tech Grid Background (Light) */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:60px_60px]" />
+      
+      <div className="container px-4 md:px-6 mx-auto max-w-5xl relative z-10">
+        <FadeIn className="text-center mb-24">
+          <div className="inline-flex items-center gap-3 mb-8">
+            <span className="text-[10px] font-mono font-bold text-black/20">[FILTER_LOG: CRITERIA]</span>
+            <div className="h-px w-8 bg-black/10" />
+            <p className="text-[10px] font-medium tracking-[0.4em] text-black/40 uppercase font-mono">ALIGNMENT CHECK</p>
+          </div>
+          <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium text-black leading-tight tracking-tight">
+            Fit
+          </h2>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
-          {/* Relevant Column */}
-          <FadeInStagger>
-            <FadeInChild>
-              <div className="bg-background/40 backdrop-blur-md rounded-[3rem] p-12 lg:p-14 shadow-2xl h-full border border-white/5 relative group overflow-hidden transition-all duration-500 hover:border-accent/10">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-full blur-[60px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-                
-                <h4 className="font-serif text-3xl lg:text-4xl mb-12 flex items-center gap-5 text-foreground">
-                   <div className="h-12 w-12 rounded-full bg-accent/10 text-accent flex items-center justify-center border border-accent/20">
-                     <Check className="h-6 w-6" />
-                   </div>
-                   Relevant When:
-                </h4>
-                <ul className="space-y-10">
-                  {relevantPoints.map((point, i) => (
-                    <li key={i} className="flex items-start gap-5">
-                       <Check className="h-6 w-6 text-accent mt-0.5 shrink-0 opacity-40" />
-                       <span className="text-xl lg:text-2xl text-foreground/80 font-sans font-light leading-snug tracking-tight">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeInChild>
-          </FadeInStagger>
+        <div className="grid md:grid-cols-2 gap-px bg-black/5 overflow-hidden border border-black/5">
+          {/* Positive Alignment */}
+          <div className="bg-white p-12 lg:p-16 relative group">
+            <div className="mb-12 flex items-center justify-between">
+              <span className="text-[10px] font-mono font-bold text-black/40 uppercase tracking-widest">
+                // This work is typically relevant when:
+              </span>
+              <div className="h-2 w-2 rounded-full bg-black/10" />
+            </div>
+            
+            <FadeInStagger className="space-y-8">
+              {relevantPoints.map((point, i) => (
+                <FadeInChild key={i} className="flex items-start gap-4">
+                  <div className="mt-2 h-1.5 w-1.5 bg-black shrink-0" />
+                  <p className="text-xl md:text-2xl font-sans font-light text-black/80 leading-snug tracking-tight">
+                    {point}
+                  </p>
+                </FadeInChild>
+              ))}
+            </FadeInStagger>
+            
+            {/* Technical Detail */}
+            <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="text-[9px] font-mono text-black/20">TARGET_PROFILE_MATCH</div>
+            </div>
+          </div>
 
-          {/* Not Relevant Column */}
-          <FadeInStagger>
-             <FadeInChild>
-              <div className="bg-secondary/20 backdrop-blur-sm rounded-[3rem] p-12 lg:p-14 h-full border border-dashed border-white/10 relative group transition-all duration-500 hover:border-white/20">
-                <h4 className="font-serif text-3xl lg:text-4xl mb-12 flex items-center gap-5 text-muted-foreground/60">
-                   <div className="h-12 w-12 rounded-full bg-white/3 text-white/20 flex items-center justify-center border border-white/5">
-                     <X className="h-6 w-6" />
-                   </div>
-                   Not Relevant When:
-                </h4>
-                <ul className="space-y-10">
-                  {notRelevantPoints.map((point, i) => (
-                    <li key={i} className="flex items-start gap-5 text-muted-foreground/40">
-                       <X className="h-6 w-6 text-white/10 mt-0.5 shrink-0" />
-                       <span className="text-xl lg:text-2xl font-sans font-light leading-snug tracking-tight">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-             </FadeInChild>
-          </FadeInStagger>
+          {/* Negative Alignment */}
+          <div className="bg-black/[0.01] p-12 lg:p-16 relative group">
+             <div className="mb-12 flex items-center justify-between">
+              <span className="text-[10px] font-mono font-bold text-black/20 uppercase tracking-widest">
+                // It is not relevant when:
+              </span>
+              <div className="h-2 w-2 border border-black/10 rounded-full" />
+            </div>
+
+            <FadeInStagger className="space-y-8 opacity-40">
+              {notRelevantPoints.map((point, i) => (
+                <FadeInChild key={i} className="flex items-start gap-4">
+                  <div className="mt-2 h-px w-4 bg-black/20 shrink-0" />
+                  <p className="text-xl md:text-2xl font-sans font-light text-black/60 leading-snug tracking-tight">
+                    {point}
+                  </p>
+                </FadeInChild>
+              ))}
+            </FadeInStagger>
+
+             {/* Technical Detail */}
+             <div className="absolute bottom-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="text-[9px] font-mono text-black/20">EXCLUSION_THRESHOLD_HIT</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Technical Summary Footer */}
+        <div className="mt-20 flex flex-col md:flex-row items-center justify-between border-t border-black/5 pt-8 text-center md:text-left gap-6">
+           <p className="text-[10px] font-mono text-black/30 tracking-[0.2em] uppercase">
+             Strategic Pre-Qualification Protocol // 2024.1
+           </p>
+           <div className="flex gap-1">
+              {[1, 2, 3, 4, 5].map(i => (
+                <div key={i} className={`h-1 w-1 ${i <= 3 ? 'bg-black/20' : 'bg-black/5'}`} />
+              ))}
+           </div>
         </div>
       </div>
     </section>

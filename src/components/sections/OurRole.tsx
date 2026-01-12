@@ -1,43 +1,52 @@
 "use client";
 
 import { FadeIn } from "@/components/ui/fade-in";
-import { Pill } from "@/components/ui/pill";
-import { ShieldAlert } from "lucide-react";
 
 export function OurRole() {
   return (
-    <section id="our-role" className="py-40 bg-secondary/40 relative overflow-hidden w-full flex justify-center">
-      {/* Subtle Background Accent */}
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/3 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+    <section id="our-role" className="relative py-32 bg-black w-full flex justify-center overflow-hidden border-b border-white/5">
+      {/* Tech Grid Background (Dark) */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
 
-      <div className="container px-4 md:px-6 mx-auto max-w-[95%]">
-        <div className="grid lg:grid-cols-2 gap-24 items-start">
+      <div className="container px-4 md:px-6 mx-auto max-w-5xl relative z-10">
+        <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
           
-          <FadeIn>
-            <Pill className="mb-8 font-sans">Our Role</Pill>
-            <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground mb-12 leading-[0.9] tracking-tight">
-              We are not vendors, <br/> implementers, <br/> or generalists.
-            </h2>
-            <div className="h-px w-24 bg-accent/40" />
-          </FadeIn>
-
-          <FadeIn delay={0.2} className="space-y-16">
-            <p className="text-2xl md:text-3xl lg:text-4xl font-light font-sans leading-tight text-foreground/80 tracking-tight">
-              Our work sits between <span className="text-foreground font-normal border-b-2 border-accent/20">strategy consulting</span> and <span className="text-foreground font-normal border-b-2 border-accent/20">market research</span>, focused on senior-level insight and decision clarity.
-            </p>
-            
-            <div className="bg-background/20 backdrop-blur-sm rounded-[2.5rem] p-10 md:p-12 border border-white/5 shadow-2xl flex items-start gap-8 group hover:border-accent/10 transition-all duration-500">
-              <div className="h-14 w-14 rounded-full bg-accent/5 flex items-center justify-center text-accent shrink-0 border border-accent/10">
-                <ShieldAlert className="h-7 w-7" />
-              </div>
-              <div className="space-y-3">
-                <p className="text-2xl font-serif font-medium text-foreground">Independence and focus are deliberate.</p>
-                <p className="text-muted-foreground font-sans font-light text-lg leading-relaxed">
-                  Our neutrality is our greatest asset in providing unvarnished truth, unincumbered by vendor agendas or implementation bias.
+          <div className="relative order-2 lg:order-1">
+            <FadeIn>
+              <div className="p-8 md:p-12 border border-white/10 bg-white/[0.02] rounded-sm relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                <div className="absolute -left-1 top-1/2 -translate-y-1/2 w-2 h-8 bg-white/10" />
+                
+                <p className="text-xl md:text-2xl font-sans font-light text-white/70 leading-relaxed tracking-tight mb-12">
+                  Our work sits between <span className="text-white">strategy consulting</span> and <span className="text-white text-italic font-serif">market research</span>, focused on senior-level insight and decision clarity.
                 </p>
+
+                <div className="flex items-center justify-between pt-8 border-t border-white/10">
+                  <p className="font-serif text-lg md:text-xl text-white font-medium italic">
+                    Independence and focus are deliberate.
+                  </p>
+                  <div className="text-[10px] font-mono text-white/20 tracking-widest uppercase">
+                    // CORE_PROTOCOL //
+                  </div>
+                </div>
               </div>
-            </div>
-          </FadeIn>
+            </FadeIn>
+            <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b border-l border-white/10 pointer-events-none" />
+          </div>
+
+          <div className="order-1 lg:order-2">
+            <FadeIn delay={0.2}>
+              <div className="inline-flex items-center gap-2 mb-6">
+                <span className="h-px w-8 bg-white/20" />
+                <p className="text-[10px] font-medium tracking-[0.4em] text-white/40 uppercase font-mono">DEFINITION: OUR CORE</p>
+              </div>
+              <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.1] tracking-tight">
+                We are not <br/> 
+                <span className="text-white/30 italic font-light">vendors, implementers,</span> <br/> 
+                or generalists.
+              </h2>
+            </FadeIn>
+          </div>
 
         </div>
       </div>
