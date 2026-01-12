@@ -12,11 +12,6 @@ const team = [
     name: "Yusuf Kurek",
     role: "PARTNER",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2574&auto=format&fit=crop"
-  },
-  {
-    name: "Daniel Roe",
-    role: "ASSOCIATE PARTNER",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2570&auto=format&fit=crop"
   }
 ];
 
@@ -38,25 +33,28 @@ export function Team() {
           </FadeIn>
         </div>
 
-        <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {team.map((member, i) => (
-            <FadeInChild key={i}>
-              <div className="group cursor-pointer">
-                <div className="aspect-[4/5] overflow-hidden rounded-sm mb-6 bg-black/5">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
-                  />
+        <div className="grid lg:grid-cols-[1fr_3fr] gap-12 lg:gap-24">
+          <div className="hidden lg:block" /> { /* Column spacer to align with text above */ }
+          <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+            {team.map((member, i) => (
+              <FadeInChild key={i}>
+                <div className="group cursor-pointer">
+                  <div className="aspect-[4/5] overflow-hidden rounded-sm mb-6 bg-black/5">
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold text-black/30 tracking-[0.2em] mb-2 uppercase">{member.role}</p>
+                    <h3 className="text-xl font-sans font-bold text-black tracking-tight">{member.name}</h3>
+                  </div>
                 </div>
-                <div>
-                   <p className="text-[10px] font-bold text-black/30 tracking-[0.2em] mb-2 uppercase">{member.role}</p>
-                   <h3 className="text-xl font-sans font-bold text-black tracking-tight">{member.name}</h3>
-                </div>
-              </div>
-            </FadeInChild>
-          ))}
-        </FadeInStagger>
+              </FadeInChild>
+            ))}
+          </FadeInStagger>
+        </div>
       </div>
     </section>
   );
