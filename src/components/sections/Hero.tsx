@@ -21,7 +21,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 overflow-hidden w-full bg-black">
+    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden w-full bg-black">
       <Script 
         src="https://assets.calendly.com/assets/external/widget.js" 
         strategy="lazyOnload"

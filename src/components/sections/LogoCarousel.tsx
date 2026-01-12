@@ -4,14 +4,12 @@ import { FadeIn } from "@/components/ui/fade-in";
 
 // Verified SVG URLs (Wikimedia/CDN)
 const companies = [
-  { name: "Goldman Sachs", logo: "https://upload.wikimedia.org/wikipedia/commons/6/61/Goldman_Sachs.svg" },
-  { name: "J.P. Morgan", logo: "https://upload.wikimedia.org/wikipedia/commons/0/09/JPMorgan_Chase_Logo_2008_1.svg" },
-  { name: "McKinsey", logo: "https://upload.wikimedia.org/wikipedia/commons/3/36/McKinsey_%26_Company_Shield_Logo.svg" }, // Shield logo has some color/shape
-  { name: "BlackRock", logo: "https://upload.wikimedia.org/wikipedia/commons/6/67/BlackRock_logo.svg" },
-  { name: "Morgan Stanley", logo: "https://upload.wikimedia.org/wikipedia/commons/3/34/Morgan_Stanley_Logo_1.svg" },
-  { name: "Citigroup", logo: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Citigroup_Logo.svg" },
-  { name: "Bain & Company", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bain_and_Company_Logo.svg" },
-  { name: "BCG", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Boston_Consulting_Group_2020_logo.svg" },
+  { name: "Goldman Sachs", logo: "/Goldman-Sachs-Logo.png" },
+  { name: "J.P. Morgan", logo: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Logo_of_JPMorganChase_2024.svg" },
+  { name: "McKinsey", logo: "https://upload.wikimedia.org/wikipedia/commons/1/16/McKinsey_Script_Mark_2019.svg" },
+  { name: "BlackRock", logo: "https://upload.wikimedia.org/wikipedia/commons/8/85/BlackRock_wordmark.svg" },
+  { name: "Morgan Stanley", logo: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Morgan_Stanley_Logo_2024.svg" },
+  { name: "Citigroup", logo: "https://upload.wikimedia.org/wikipedia/commons/7/73/Citi_logo_March_2023.svg" },
 ];
 
 const technologies = [
@@ -27,18 +25,18 @@ const technologies = [
 
 export function LogoCarousel() {
   return (
-    <section className="py-20 bg-white w-full flex justify-center items-center overflow-hidden border-b border-black/5">
-      <div className="w-full max-w-6xl px-4 flex flex-col gap-12">
+    <section className="py-12 bg-white w-full flex justify-center items-center overflow-hidden border-b border-black/5">
+      <div className="w-full max-w-6xl px-4 flex flex-col gap-8">
         
         <div className="text-center">
           <FadeIn>
-            <p className="text-[10px] font-bold tracking-[0.3em] text-black/40 uppercase mb-12">
-               LEADERS IN THE FIELD USE KUREK|HERSI
+            <p className="text-[10px] font-bold tracking-[0.3em] text-black/40 uppercase mb-6">
+                KUREK|HERSI WORKS WITH EXPERTS FROM
             </p>
           </FadeIn>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-12 gap-y-16 items-center justify-items-center opacity-40 grayscale hover:opacity-100 transition-opacity duration-700">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-12 gap-y-10 items-center justify-items-center opacity-40 grayscale hover:opacity-100 transition-opacity duration-700">
            {companies.map((company) => (
              <div key={company.name} className="h-8 w-32 flex items-center justify-center">
                <img 

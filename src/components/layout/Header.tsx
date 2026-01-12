@@ -20,11 +20,9 @@ export function Header() {
 
   const navLinks = [
     { name: "The Decision", href: "#the-reality" },
-    { name: "Partners", href: "#team" },
     { name: "Our Role", href: "#our-role" },
     { name: "The Diagnostic", href: "#the-diagnostic" },
     { name: "Fit", href: "#fit" },
-    { name: "Conversation", href: "#conversation" },
   ];
 
   const scrollToSection = (e: React.MouseEvent, href: string) => {
@@ -61,14 +59,14 @@ export function Header() {
           />
         </Link>
 
-        {/* Desktop Nav - Spaced out across full width */}
-        <nav className="hidden md:flex items-center flex-grow justify-center px-8 lg:px-12">
-          <div className="flex items-center justify-between w-full max-w-5xl">
+        {/* Desktop Nav - Centered and Tight */}
+        <nav className="hidden md:flex items-center flex-grow justify-center">
+          <div className="flex items-center gap-12 lg:gap-16">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-[10px] lg:text-xs font-medium text-white/50 hover:text-white transition-all duration-300 tracking-wider font-sans whitespace-nowrap"
+                className="text-[10px] uppercase font-bold text-white/40 hover:text-white transition-all duration-300 tracking-[0.25em] font-sans whitespace-nowrap"
                 onClick={(e) => scrollToSection(e, link.href)}
               >
                 {link.name}
