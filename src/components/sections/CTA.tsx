@@ -44,7 +44,7 @@ export function CTA() {
           </h2>
           
           <p className="text-xl md:text-2xl font-sans font-light text-black/60 max-w-2xl mx-auto leading-relaxed tracking-tight mb-16">
-            We discuss the decision you are facing and assess whether this work is appropriate.
+            We focus on the decision you are facing, the constraints around it, and whether this work is genuinely useful.
           </p>
           
           <div className="flex flex-col items-center gap-12">

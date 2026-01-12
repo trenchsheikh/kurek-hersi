@@ -52,25 +52,16 @@ export function HeroSection() {
         <div className="flex flex-col items-center text-center">
           <FadeIn delay={0.1}>
             <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] mb-12 text-white max-w-4xl mx-auto">
-              AI is forcing <span className="text-white/40 italic font-light whitespace-nowrap">senior marketing leaders</span> <br className="hidden md:block"/> 
-              to make strategic decisions <br className="hidden md:block"/> 
-              that are difficult to reverse.
+              AI decisions are the <br className="hidden md:block"/> 
+              <span className="text-white/40 font-light">most expensive decisions</span> <br className="hidden md:block"/> 
+              you will make this year
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <div className="space-y-6 mb-16">
-              <p className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto font-sans font-light leading-relaxed tracking-tight px-4">
-                We help executive teams get those decisions right before strategy is locked or capital is committed.
+              <p className="text-lg md:text-xl text-white/50 max-w-3xl mx-auto font-sans font-light leading-relaxed tracking-tight px-4 mb-16">
+                We help senior marketing, product, and strategy leaders make irreversible AI decisions with clarity, confidence, and evidence before budgets, teams, or roadmaps are locked in.
               </p>
-              <div className="flex items-center justify-center gap-4">
-                <div className="h-px w-8 bg-white/10" />
-                <p className="text-xs md:text-sm text-white/20 font-sans font-bold uppercase tracking-[0.4em]">
-                  Marketing // AdTech // MarTech
-                </p>
-                <div className="h-px w-8 bg-white/10" />
-              </div>
-            </div>
           </FadeIn>
 
           <FadeIn delay={0.3}>
@@ -80,7 +71,7 @@ export function HeroSection() {
                 size="lg"
                 className="h-14 px-12 rounded-full bg-white text-black hover:bg-white/90 transition-all duration-300 font-medium text-base tracking-tight shadow-2xl hover:scale-105"
               >
-                Discuss a strategic AI decision
+                Book a Strategic Diagnostic
               </Button>
             </div>
           </FadeIn>

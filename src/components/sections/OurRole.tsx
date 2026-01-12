@@ -16,14 +16,12 @@ export function OurRole() {
               <div className="p-8 md:p-12 border border-white/10 bg-white/[0.02] rounded-sm relative overflow-hidden group">
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                 <div className="absolute -left-1 top-1/2 -translate-y-1/2 w-2 h-8 bg-white/10" />
-                
                 <p className="text-xl md:text-2xl font-sans font-light text-white/70 leading-relaxed tracking-tight mb-12">
-                  Our work sits between <span className="text-white">strategy consulting</span> and <span className="text-white text-italic font-serif">market research</span>, focused on senior-level insight and decision clarity.
+                  We operate as an independent decision partner to executive teams navigating high-stakes AI choices.
                 </p>
-
                 <div className="flex items-center justify-between pt-8 border-t border-white/10">
-                  <p className="font-serif text-lg md:text-xl text-white font-medium italic">
-                    Independence and focus are deliberate.
+                  <p className="font-serif text-lg md:text-xl text-white font-medium italic leading-relaxed">
+                    Our role is to reduce decision risk before capital, reputation, or organisational momentum is committed.
                   </p>
 
                 </div>
@@ -35,10 +33,10 @@ export function OurRole() {
           <div className="order-1 lg:order-2">
             <FadeIn delay={0.2}>
 
-              <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.1] tracking-tight">
-                We are not <br/> 
-                <span className="text-white/30 italic font-light">vendors, implementers,</span> <br/> 
-                or generalists.
+              <h2 className="font-serif text-xl md:text-2xl lg:text-3xl font-medium text-white leading-relaxed tracking-tight">
+                <span className="whitespace-nowrap">We do <span className="text-white/30">not</span> sell software.</span> <br/>
+                <span className="whitespace-nowrap">We are <span className="text-white/30">not</span> an AI vendor.</span> <br/>
+                <span className="whitespace-nowrap">We are <span className="text-white/30">not</span> an implementation partner.</span>
               </h2>
             </FadeIn>
           </div>

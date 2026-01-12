@@ -3,20 +3,34 @@
 import { FadeIn } from "@/components/ui/fade-in";
 import { motion } from "framer-motion";
 
-export function TheDiagnostic() {
+const defaultSteps = [
+  "Decision scoping with senior stakeholders",
+  "Targeted market and buyer intelligence",
+  "Synthesis into decision frameworks",
+  "Executive readout with clear recommendations"
+];
+
+export function TheDiagnostic({ 
+  reverse = false, 
+  title = "HOW IT WORKS",
+  steps = defaultSteps
+}: { 
+  reverse?: boolean; 
+  title?: string;
+  steps?: string[];
+}) {
   return (
-    <section id="the-diagnostic" className="relative py-32 bg-white w-full flex justify-center overflow-hidden border-b border-black/5">
+    <section id="the-diagnostic" className="relative pt-32 pb-16 bg-white w-full flex justify-center overflow-hidden border-b border-black/5">
       {/* Tech Grid Background (Light) */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:linear-gradient(to_bottom,transparent,black,transparent)]" />
 
       <div className="container px-4 md:px-6 mx-auto max-w-6xl relative z-10">
-        <div className="flex flex-col lg:flex-row gap-20 items-center">
+        <div className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-20 items-center`}>
           <div className="w-full lg:w-5/12">
             <FadeIn>
 
-              <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium text-black leading-[1.05] tracking-tight">
-                Before execution, <br className="hidden md:block"/> 
-                <span className="text-black/30 italic font-light">there is a diagnostic decision.</span>
+              <h2 className="font-serif text-3xl md:text-5xl lg:text-7xl font-light text-black uppercase leading-[1.05] tracking-tight whitespace-nowrap">
+                {title}
               </h2>
             </FadeIn>
           </div>
@@ -29,15 +43,15 @@ export function TheDiagnostic() {
                 
 
 
-                <p className="text-xl md:text-3xl font-sans font-light text-black/70 leading-relaxed tracking-tight mb-16">
-                  We start by clarifying what <span className="text-black font-medium underline underline-offset-8 decoration-black/10">decision needs to be made</span> and what is at stake, before teams move to platforms, pilots, or hiring.
-                </p>
-
-                <div className="flex items-center justify-between pt-10 border-t border-black/5">
-                  <p className="font-serif text-xl md:text-2xl text-black font-medium">
-                    This work stands on its own.
-                  </p>
-
+                <div className="space-y-8 md:space-y-10">
+                  {steps.map((step, i) => (
+                    <div key={i} className="flex gap-6 items-baseline">
+                      <span className="text-black/20 font-serif italic text-2xl md:text-3xl">{i + 1}.</span>
+                      <p className="text-lg md:text-2xl font-sans font-light text-black/80 leading-tight tracking-tight whitespace-nowrap">
+                        {step}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </FadeIn>

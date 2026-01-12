@@ -16,15 +16,15 @@ export function FitSection() {
   ];
 
   return (
-    <section id="fit" className="relative py-40 bg-white w-full flex justify-center overflow-hidden border-b border-black/5">
+    <section id="fit" className="relative py-24 bg-white w-full flex justify-center overflow-hidden border-b border-black/5">
       {/* Tech Grid Background (Light) */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:60px_60px]" />
       
       <div className="container px-4 md:px-6 mx-auto max-w-5xl relative z-10">
         <FadeIn className="text-center mb-24">
 
-          <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium text-black leading-tight tracking-tight">
-            Fit
+          <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium text-black leading-tight tracking-tight uppercase">
+            OUTCOMES WE ENABLE
           </h2>
         </FadeIn>
 

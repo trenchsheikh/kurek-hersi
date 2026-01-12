@@ -97,6 +97,10 @@
   --font-sans: var(--font-sans);
 }
 
+section[id] {
+  scroll-margin-top: 100px;
+}
+
 .dark {
   --background: oklch(0 0 0);
   --foreground: oklch(0.98 0 0);

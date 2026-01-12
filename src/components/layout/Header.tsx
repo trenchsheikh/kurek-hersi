@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Menu, ArrowDown } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -20,9 +20,9 @@ export function Header() {
 
   const navLinks = [
     { name: "The Decision", href: "#the-reality" },
+    { name: "Team", href: "#team" },
     { name: "Our Role", href: "#our-role" },
     { name: "The Diagnostic", href: "#the-diagnostic" },
-    { name: "Fit", href: "#fit" },
   ];
 
   const scrollToSection = (e: React.MouseEvent, href: string) => {
@@ -32,13 +32,9 @@ export function Header() {
     const el = document.querySelector(href);
     if (el) {
       const offset = 100;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = el.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
+      const elementTop = el.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
-        top: offsetPosition,
+        top: elementTop - offset,
         behavior: "smooth"
       });
     }
@@ -51,7 +47,14 @@ export function Header() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="/" className="z-50 group flex items-center">
+        <Link 
+          href="/" 
+          className="z-50 group flex items-center"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
           <img 
             src="/logo.png" 
             alt="Kurek Hersi" 
@@ -66,6 +69,7 @@ export function Header() {
               <Link
                 key={link.name}
                 href={link.href}
+                scroll={false}
                 className="text-[10px] uppercase font-bold text-white/40 hover:text-white transition-all duration-300 tracking-[0.25em] font-sans whitespace-nowrap"
                 onClick={(e) => scrollToSection(e, link.href)}
               >
@@ -87,8 +91,7 @@ export function Header() {
             size="default" 
             className="rounded-sm px-6 font-medium transition-all bg-white text-black hover:bg-white/90 hover:scale-105 hidden md:flex items-center gap-2"
           >
-            Start a Conversation
-            <ArrowDown className="h-4 w-4" />
+            Get Started Today
           </Button>
 
           {/* Mobile Nav Trigger */}
@@ -105,6 +108,7 @@ export function Header() {
                   <Link
                     key={link.name}
                     href={link.href}
+                    scroll={false}
                     className="text-2xl font-serif font-bold text-black hover:text-black/60 transition-colors"
                     onClick={(e) => scrollToSection(e, link.href)}
                   >
@@ -123,8 +127,7 @@ export function Header() {
                   }}
                   className="w-full max-w-xs rounded-sm h-14 text-lg font-medium flex items-center justify-center gap-2"
                 >
-                  Start a Conversation
-                  <ArrowDown className="h-5 w-5" />
+                  Get Started Today
                 </Button>
               </nav>
             </SheetContent>

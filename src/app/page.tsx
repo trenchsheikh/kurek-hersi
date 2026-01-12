@@ -5,7 +5,6 @@ import { LogoCarousel } from "@/components/sections/LogoCarousel";
 import { TheRealitySection as TheReality } from "@/components/sections/TheReality";
 import { OurRole } from "@/components/sections/OurRole";
 import { TheDiagnostic } from "@/components/sections/TheDiagnostic";
-import { FitSection as Fit } from "@/components/sections/Fit";
 import { Team } from "@/components/sections/Team";
 import { CTA } from "@/components/sections/CTA";
 
@@ -20,7 +19,16 @@ export default function Home() {
         <Team />
         <OurRole />
         <TheDiagnostic />
-        <Fit />
+        <TheDiagnostic 
+          reverse 
+          title="WHY KUREK HERSI" 
+          steps={[
+            "Faster executive alignment on AI priorities",
+            "Reduced risk in vendor and platform selection",
+            "Clear go or no-go decisions before major spend",
+            "Confidence to move forward or stop early"
+          ]} 
+        />
         <CTA />
       </main>
       <Footer />

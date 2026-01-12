@@ -31,7 +31,7 @@ export function LogoCarousel() {
         <div className="text-center">
           <FadeIn>
             <p className="text-[10px] font-bold tracking-[0.3em] text-black/40 uppercase mb-6">
-                KUREK|HERSI WORKS WITH EXPERTS FROM
+                Trusted by senior teams at
             </p>
           </FadeIn>
         </div>
