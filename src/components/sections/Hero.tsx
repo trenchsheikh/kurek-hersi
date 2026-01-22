@@ -28,7 +28,7 @@ export function HeroSection() {
         <div className="relative z-10 container px-4 md:px-6 w-full max-w-6xl">
           <div className="flex flex-col items-center text-center">
               <FadeIn delay={0.1}>
-                <h1 className="font-serif text-4xl md:text-7xl lg:text-9xl font-medium tracking-tight leading-[0.95] mb-8 md:mb-12 text-white">
+                <h1 className="font-serif text-5xl md:text-7xl lg:text-9xl font-medium tracking-tight leading-[0.95] mb-8 md:mb-12 text-white">
                   Executive-Grade <br /> Market Truth for AI
                 </h1>
               </FadeIn>
