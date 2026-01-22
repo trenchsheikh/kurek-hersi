@@ -6,6 +6,7 @@ import { TheRealitySection as TheReality } from "@/components/sections/TheRealit
 
 import { Team } from "@/components/sections/Team";
 import { HowItWorks } from "@/components/sections/HowItWorks";
+import { FitBackground } from "@/components/sections/FitBackground";
 import { CTA } from "@/components/sections/CTA";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
 
 
         <Team />
+        <FitBackground />
         <CTA />
       </main>
       <Footer />
