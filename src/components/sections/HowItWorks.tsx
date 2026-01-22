@@ -103,10 +103,7 @@ export function HowItWorks() {
               {/* Content Grid */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-full">
                 
-                <div className="lg:col-span-7 bg-transparent flex flex-col justify-end p-0">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-black/5 to-black/10 mb-6 flex items-center justify-center">
-                     <div className="w-8 h-8 rounded-full bg-black" />
-                  </div>
+                <div className="lg:col-span-7 bg-transparent flex flex-col justify-start pt-0 md:pt-4">
                    <p className={cn("text-lg md:text-2xl font-medium leading-relaxed tracking-tight whitespace-pre-line", step.textColor)}>
                     {step.mainText}
                    </p>
