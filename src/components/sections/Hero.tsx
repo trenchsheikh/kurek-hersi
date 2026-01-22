@@ -53,7 +53,7 @@ export function HeroSection() {
                   <Button
                     onClick={openCalendly}
                     size="lg"
-                    className="h-16 px-16 rounded-full bg-white text-black hover:bg-white/90 transition-all duration-500 font-medium text-lg tracking-tight shadow-2xl hover:scale-105"
+                    className="h-16 px-16 rounded-none bg-white text-black hover:bg-white/90 transition-all duration-500 font-medium text-lg tracking-tight shadow-2xl hover:scale-105"
                   >
                     Book a Strategic Diagnostic
                   </Button>

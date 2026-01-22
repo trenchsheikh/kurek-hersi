@@ -45,7 +45,7 @@ export function TheRealitySection() {
                        });
                      }
                    }}
-                   className="bg-black text-white px-8 py-4 rounded-full font-medium tracking-wide hover:bg-black/90 transition-colors whitespace-nowrap"
+                   className="bg-black text-white px-8 py-4 rounded-none font-medium tracking-wide hover:bg-black/90 transition-colors whitespace-nowrap"
                  >
                    Contact us
                  </button>

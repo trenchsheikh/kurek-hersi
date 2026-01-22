@@ -39,21 +39,20 @@ export function CTA() {
 
           
           <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium mb-12 leading-[1.1] tracking-tight text-white max-w-4xl mx-auto">
-            The initial conversation is <br className="hidden md:block"/> 
-            <span className="italic text-white/30 font-light">diagnostic</span>, not a pitch.
+            No pitch. No obligation.
           </h2>
           
           <p className="text-xl md:text-2xl font-sans font-light text-white/60 max-w-2xl mx-auto leading-relaxed tracking-tight mb-16">
-            We focus on the decision you are facing, the constraints around it, and whether this work is genuinely useful.
+            Just a clear discussion about the decision at hand and whether this work is the right intervention.
           </p>
           
           <div className="flex flex-col items-center gap-12">
             <Button 
                 onClick={openCalendly}
                 size="lg" 
-                className="h-14 px-10 rounded-sm bg-white text-black hover:bg-white/90 transition-all duration-300 font-medium text-base tracking-tight shadow-xl" 
+                className="h-14 px-10 rounded-none bg-white text-black hover:bg-white/90 transition-all duration-300 font-medium text-base tracking-tight shadow-xl" 
             >
-              Request a strategic diagnostic conversation
+              Book a diagnostic conversation
             </Button>
             
 
