@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, DM_Serif_Display } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
-const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-sans" });
-const dmSerif = DM_Serif_Display({ 
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const instrumentSerif = Instrument_Serif({ 
   weight: "400", 
   subsets: ["latin"], 
   variable: "--font-serif",
@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${plusJakarta.variable} ${dmSerif.variable} font-sans antialiased bg-background text-foreground`}>
+      <body className={`${inter.variable} ${instrumentSerif.variable} font-sans antialiased bg-background text-foreground`}>
         <ScrollBeam />
         {children}
       </body>

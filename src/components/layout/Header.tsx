@@ -109,7 +109,7 @@ export function Header() {
                     key={link.name}
                     href={link.href}
                     scroll={false}
-                    className="text-2xl font-serif font-bold text-black hover:text-black/60 transition-colors"
+                    className="text-2xl font-sans font-bold text-black hover:text-black/60 transition-colors uppercase tracking-[0.2em]"
                     onClick={(e) => scrollToSection(e, link.href)}
                   >
                     {link.name}

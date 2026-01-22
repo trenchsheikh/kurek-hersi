@@ -9,9 +9,9 @@ const team = [
     image: "/jibz.jpeg"
   },
   {
-    name: "Bart",
+    name: "Bart Kurek",
     role: "PARTNER",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2574&auto=format&fit=crop"
+    image: "/bart.jpeg"
   }
 ];
 
