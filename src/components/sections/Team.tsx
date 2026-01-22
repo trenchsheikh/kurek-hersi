@@ -4,14 +4,14 @@ import { FadeIn, FadeInStagger, FadeInChild } from "@/components/ui/fade-in";
 
 const team = [
   {
-    name: "Jibreal Hersi",
-    role: "PARTNER",
-    image: "/jibz.jpeg"
-  },
-  {
     name: "Bart Kurek",
     role: "PARTNER",
     image: "/bart.jpeg"
+  },
+  {
+    name: "Jibreal Hersi",
+    role: "PARTNER",
+    image: "/jibz.jpeg"
   }
 ];
 

@@ -61,11 +61,8 @@ export function HowItWorks() {
        <div className="container px-4 md:px-6 w-full max-w-6xl mx-auto mb-32">
           <div className="flex flex-col items-center text-center">
             <FadeIn>
-              <p className="text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase mb-4">
-                 // PROCESS
-              </p>
               <h2 className="font-serif text-4xl md:text-5xl text-white">
-                How We Work
+                 // PROCESS
               </h2>
             </FadeIn>
           </div>

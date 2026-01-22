@@ -18,7 +18,7 @@ export default function Home() {
         <Hero />
         <LogoCarousel />
         <TheReality />
-        <Team />
+
         <HowItWorks />
         <OurRole />
         <TheDiagnostic />
@@ -33,6 +33,7 @@ export default function Home() {
           ]} 
         />
         <Fit />
+        <Team />
         <CTA />
       </main>
       <Footer />
