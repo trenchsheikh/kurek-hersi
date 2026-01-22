@@ -62,7 +62,7 @@ export function TheRealitySection() {
                     {point.id}
                   </span>
                   <div className="flex flex-col gap-2">
-                    <span className="inline-block px-3 py-1 rounded-full bg-black/5 text-black/50 text-[10px] uppercase tracking-widest w-fit font-medium">
+                    <span className="inline-block px-3 py-1 rounded-full bg-black/5 text-black/50 text-[10px] uppercase tracking-widest w-fit font-medium whitespace-nowrap">
                       {point.label}
                     </span>
                     <p className="text-lg text-black/80 font-medium leading-snug">
