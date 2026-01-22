@@ -20,7 +20,7 @@ export function TheDiagnostic({
   steps?: string[];
 }) {
   return (
-    <section id="the-diagnostic" className="relative pt-32 pb-16 bg-white w-full flex justify-center overflow-hidden border-b border-black/5">
+    <section id="the-diagnostic" className="relative pt-16 pb-16 bg-white w-full flex justify-center overflow-hidden border-b border-black/5">
       {/* Tech Grid Background (Light) */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:linear-gradient(to_bottom,transparent,black,transparent)]" />
 

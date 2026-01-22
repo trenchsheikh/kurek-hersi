@@ -57,7 +57,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative w-full bg-black py-32">
+    <section id="how-it-works" className="relative w-full bg-black pt-32 pb-16">
        <div className="container px-4 md:px-6 w-full max-w-6xl mx-auto mb-32">
           <div className="flex flex-col items-center text-center">
             <FadeIn>
@@ -129,8 +129,7 @@ export function HowItWorks() {
         ))}
       </div>
       
-      {/* Spacer */}
-      <div className="h-[20vh] bg-black" />
+      {/* Spacer removed */}
     </section>
   );
 }

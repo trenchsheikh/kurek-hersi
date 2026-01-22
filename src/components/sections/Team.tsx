@@ -21,9 +21,9 @@ export function Team() {
       <div className="container px-4 md:px-6 w-full max-w-6xl">
         <div className="flex flex-col items-center text-center mb-16">
           <FadeIn>
-            <p className="text-[10px] font-bold tracking-[0.4em] text-black/40 uppercase mb-4">
+            <h2 className="font-serif text-4xl md:text-5xl text-black">
                // MEET THE FOUNDERS
-            </p>
+            </h2>
           </FadeIn>
         </div>
 
