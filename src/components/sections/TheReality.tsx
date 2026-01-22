@@ -19,7 +19,7 @@ export function TheRealitySection() {
           <div className="flex flex-col gap-8 lg:sticky lg:top-32 lg:pt-12">
             <FadeIn>
               <h2 className="font-serif text-3xl md:text-3xl lg:text-4xl text-black leading-tight tracking-tight">
-                The cost of being <span className="text-black/30 italic font-light">wrong </span>{" "}compounds quietly.
+                The cost of being <span className="text-black/30 font-light">wrong </span>{" "}compounds quietly.
               </h2>
             </FadeIn>
             
