@@ -7,7 +7,7 @@ export function TheRealitySection() {
     { id: "100%", label: "Manually verified buyers", text: "Every participant is reviewed, cross-referenced, and validated for role and authority." },
     { id: "50+", label: "Research engagements", text: "Across high-stakes GTM, pricing, and positioning work." },
     { id: "2,000+", label: "Decision-maker responses analysed", text: "Across high stakes commercial context." },
-    { id: "21–25", label: <>Days to decision-grade <br className="md:hidden" /> clarity</>, text: "Fast enough to matter.\nDeliberate enough to trust." }
+    { id: "21–25", label: "Days to decision-grade clarity", text: "Fast enough to matter. Deliberate enough to trust." }
   ];
 
   return (
@@ -16,7 +16,7 @@ export function TheRealitySection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           
           {/* Left Column: Header & Context */}
-          <div className="flex flex-col gap-8 lg:sticky lg:top-32 lg:pt-12">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left gap-8 lg:sticky lg:top-32 lg:pt-12">
             <FadeIn>
               <h2 className="font-serif text-3xl md:text-3xl lg:text-4xl text-black leading-tight tracking-tight">
                 The cost of being <span className="text-black/30 font-light">wrong </span>{" "}compounds quietly.
@@ -57,11 +57,11 @@ export function TheRealitySection() {
           <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
             {points.map((point, i) => (
               <FadeInChild key={i}>
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col items-center text-center md:items-start md:text-left gap-4">
                   <span className="text-5xl md:text-7xl font-bold text-black tracking-tighter font-serif">
                     {point.id}
                   </span>
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col items-center text-center md:items-start md:text-left gap-2">
                     <span className="inline-block px-3 py-1 rounded-full bg-black/5 text-black/50 text-[10px] uppercase tracking-widest w-fit font-medium whitespace-nowrap">
                       {point.label}
                     </span>
