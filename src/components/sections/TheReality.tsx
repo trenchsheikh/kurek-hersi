@@ -16,20 +16,23 @@ export function TheRealitySection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           
           {/* Left Column: Header & Context */}
-          <div className="flex flex-col gap-8 sticky top-32">
+          <div className="flex flex-col gap-8 sticky top-32 lg:pt-12">
             <FadeIn>
-              <h2 className="font-serif text-5xl md:text-7xl text-black leading-[1.1] tracking-tight">
-                Most teams are deciding <br/> 
-                <span className="text-black/30 italic font-light">under pressure, not clarity.</span>
+              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-black leading-tight tracking-tight">
+                The cost of being <span className="text-black/30 italic font-light">wrong </span>{" "}compounds quietly.
               </h2>
             </FadeIn>
             
             <FadeIn delay={0.2}>
-              <p className="text-xl md:text-2xl text-black/60 font-light leading-relaxed max-w-xl">
-                This is where mistakes compound.
-                <br className="hidden md:block" />
-                Without a source of truth, decisions become bets.
-              </p>
+              <div className="flex flex-col gap-6 text-xl md:text-2xl text-black/60 font-light leading-relaxed max-w-xl">
+                <p>
+                  Early assumptions harden into roadmaps, budgets, and narratives. 
+                  Without independent buyer truth, teams commit long before reality intervenes.
+                </p>
+                <p>
+                  Our work exists to reduce that risk before it becomes expensive.
+                </p>
+              </div>
             </FadeIn>
 
             <FadeIn delay={0.3}>
