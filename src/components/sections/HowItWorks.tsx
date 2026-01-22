@@ -75,17 +75,17 @@ export function HowItWorks() {
         {steps.map((step, index) => (
           <div 
             key={index} 
-            className="sticky top-[15vh] h-[85vh] flex justify-center w-full"
+            className="sticky top-[10vh] h-[90vh] flex justify-center w-full"
           >
             <div 
               className={cn(
-                "relative w-full max-w-7xl h-fit min-h-[600px] p-8 md:p-12 rounded-[2rem] shadow-2xl border border-white/10 flex flex-col justify-between",
+                "relative w-full max-w-7xl h-fit min-h-[500px] p-6 md:p-10 rounded-[2rem] shadow-2xl border border-white/10 flex flex-col justify-between",
                 step.color
               )}
             >
               {/* Header Section */}
-              <div className="w-full mb-12 border-b border-black/10 pb-8">
-                <div className="flex gap-6 mb-6">
+              <div className="w-full mb-8 border-b border-black/10 pb-6">
+                <div className="flex gap-6 mb-4">
                   {step.tags.map((tag, i) => (
                      <span key={i} className="font-serif text-lg text-black/60 italic tracking-tight">
                        {tag}
@@ -103,9 +103,8 @@ export function HowItWorks() {
               {/* Content Grid */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-full">
                 
-                {/* Main Content Card (Left) */}
                 <div className="lg:col-span-7 bg-transparent flex flex-col justify-end p-0">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-black/5 to-black/10 mb-8 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-black/5 to-black/10 mb-6 flex items-center justify-center">
                      <div className="w-8 h-8 rounded-full bg-black" />
                   </div>
                    <p className={cn("text-lg md:text-2xl font-medium leading-relaxed tracking-tight whitespace-pre-line", step.textColor)}>
