@@ -29,7 +29,7 @@ export function HeroSection() {
           <div className="flex flex-col items-center text-center">
               <FadeIn delay={0.1}>
                 <h1 className="font-serif text-4xl md:text-7xl lg:text-9xl font-medium tracking-tight leading-[0.95] mb-8 md:mb-12 text-white">
-                  Executive-Grade <br className="hidden md:block" /> Market Truth for AI
+                  Executive-Grade <br /> Market Truth for AI
                 </h1>
               </FadeIn>
     
