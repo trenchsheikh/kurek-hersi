@@ -38,13 +38,13 @@ export function HeroSection() {
           <div className="flex flex-col items-center text-center">
               <FadeIn delay={0.1}>
                 <h1 className="font-serif text-5xl md:text-7xl lg:text-9xl font-medium tracking-tight leading-[0.95] mb-12 text-white">
-                  Executive-grade <br /> Market Truth for AI
+                  Executive-Grade <br /> Market Truth for AI
                 </h1>
               </FadeIn>
     
               <FadeIn delay={0.2}>
                   <p className="text-xl md:text-2xl text-white/50 max-w-3xl font-sans font-light leading-relaxed tracking-tight mb-16">
-                    We help senior marketing, product, and strategy leaders make irreversible AI decisions with clarity, confidence, and evidence.
+                    We help AI-first B2B leaders de-risk AI, GTM, and positioning bets using independent market truth from real buyers.
                   </p>
               </FadeIn>
     

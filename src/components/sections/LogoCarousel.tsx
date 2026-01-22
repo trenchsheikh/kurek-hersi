@@ -1,6 +1,7 @@
 "use client";
 
 import { FadeIn } from "@/components/ui/fade-in";
+import { motion } from "framer-motion";
 
 const companies = [
   { name: "Ipsos", logo: "/Ipsos_logo.svg", containerClass: "w-20" },
@@ -18,8 +19,8 @@ const companies = [
 
 export function LogoCarousel() {
   return (
-    <section className="py-12 bg-white w-full flex justify-center items-center overflow-hidden border-b border-black/5">
-      <div className="w-full max-w-6xl px-4 flex flex-col gap-8">
+    <section className="py-16 bg-white w-full border-b border-black/5 overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto px-4 flex flex-col gap-10">
         
         <div className="text-center">
           <FadeIn>
@@ -29,16 +30,35 @@ export function LogoCarousel() {
           </FadeIn>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-8 opacity-40 hover:opacity-100 transition-opacity duration-700">
-           {companies.map((company) => (
-             <div key={company.name} className={`h-8 flex items-center justify-center ${company.containerClass || 'w-28'}`}>
-               <img 
-                 src={company.logo} 
-                 alt={company.name} 
-                 className={`max-h-full max-w-full object-contain ${company.scale || ''}`} 
-               />
-             </div>
-           ))}
+        <div 
+          className="relative w-full overflow-hidden"
+          style={{
+            maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+            WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          }}
+        >
+          <motion.div 
+            className="flex items-center gap-16 md:gap-24 w-max"
+            animate={{ x: "-50%" }}
+            transition={{ 
+              duration: 100, 
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
+          >
+            {[...companies, ...companies].map((company, i) => (
+              <div 
+                key={`${company.name}-${i}`} 
+                className={`flex items-center justify-center opacity-100 ${company.containerClass || 'w-32'}`}
+              >
+                <img 
+                  src={company.logo} 
+                  alt={company.name} 
+                  className={`max-h-12 w-auto object-contain ${company.scale || ''}`} 
+                />
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

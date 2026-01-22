@@ -7,6 +7,7 @@ import { OurRole } from "@/components/sections/OurRole";
 import { TheDiagnostic } from "@/components/sections/TheDiagnostic";
 import { FitSection as Fit } from "@/components/sections/Fit";
 import { Team } from "@/components/sections/Team";
+import { HowItWorks } from "@/components/sections/HowItWorks";
 import { CTA } from "@/components/sections/CTA";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <LogoCarousel />
         <TheReality />
         <Team />
+        <HowItWorks />
         <OurRole />
         <TheDiagnostic />
         <TheDiagnostic 
