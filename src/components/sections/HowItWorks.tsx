@@ -57,8 +57,8 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative w-full bg-black pt-32 pb-16">
-       <div className="container px-4 md:px-6 w-full max-w-6xl mx-auto mb-32">
+    <section id="how-it-works" className="relative w-full bg-black pt-20 md:pt-32 pb-16">
+       <div className="container px-4 md:px-6 w-full max-w-6xl mx-auto mb-16 md:mb-32">
           <div className="flex flex-col items-center text-center">
             <FadeIn>
               <h2 className="font-serif text-4xl md:text-5xl text-white">
@@ -72,11 +72,11 @@ export function HowItWorks() {
         {steps.map((step, index) => (
           <div 
             key={index} 
-            className="sticky top-[10vh] h-[90vh] flex justify-center w-full"
+            className="relative md:sticky md:top-[10vh] md:h-[90vh] flex justify-center w-full mb-8 md:mb-0"
           >
             <div 
               className={cn(
-                "relative w-full max-w-7xl h-fit min-h-[500px] p-6 md:p-10 rounded-[2rem] shadow-2xl border border-white/10 flex flex-col justify-between",
+                "relative w-full max-w-7xl h-fit min-h-[400px] md:min-h-[500px] p-6 md:p-10 rounded-[2rem] shadow-2xl border border-white/10 flex flex-col justify-between",
                 step.color
               )}
             >
@@ -90,7 +90,7 @@ export function HowItWorks() {
                   ))}
                 </div>
                 <div className="flex items-center justify-between">
-                  <h3 className={cn("font-serif text-5xl md:text-7xl tracking-tight", step.textColor)}>
+                  <h3 className={cn("font-serif text-3xl md:text-7xl tracking-tight leading-none", step.textColor)}>
                     {step.title}
                   </h3>
                   <step.icon className="w-12 h-12 md:w-16 md:h-16 text-black/90 stroke-1" />
@@ -112,7 +112,7 @@ export function HowItWorks() {
                     <div key={i} className="flex-1 bg-white border border-black/5 p-8 rounded-xl shadow-sm flex flex-col justify-center">
                        <p className={cn(
                          "font-serif text-black mb-2 tracking-tight",
-                         stat.value.length > 15 ? "text-2xl md:text-3xl leading-tight" : "text-4xl md:text-5xl"
+                         stat.value.length > 15 ? "text-xl md:text-3xl leading-tight" : "text-2xl md:text-5xl"
                        )}>
                          {stat.value}
                        </p>

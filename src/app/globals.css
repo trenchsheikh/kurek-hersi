@@ -191,3 +191,31 @@ section[id] {
     pointer-events: none;
   }
 }
+
+/* Smooth Calendly Popup */
+.calendly-overlay {
+  animation: calendly-fade-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.calendly-modal {
+  animation: calendly-slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes calendly-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes calendly-slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Mobile specific fixes for Calendly */
+@media (max-width: 768px) {
+  .calendly-modal {
+    height: 90vh !important;
+    max-height: 90vh !important;
+    margin-top: 5vh !important;
+  }
+}

@@ -11,14 +11,14 @@ export function TheRealitySection() {
   ];
 
   return (
-    <section id="the-reality" className="relative py-32 bg-white w-full flex justify-center border-b border-black/5">
+    <section id="the-reality" className="relative py-20 md:py-32 bg-white w-full flex justify-center border-b border-black/5">
       <div className="container px-4 md:px-6 mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           
           {/* Left Column: Header & Context */}
-          <div className="flex flex-col gap-8 sticky top-32 lg:pt-12">
+          <div className="flex flex-col gap-8 lg:sticky lg:top-32 lg:pt-12">
             <FadeIn>
-              <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-black leading-tight tracking-tight">
+              <h2 className="font-serif text-3xl md:text-3xl lg:text-4xl text-black leading-tight tracking-tight">
                 The cost of being <span className="text-black/30 italic font-light">wrong </span>{" "}compounds quietly.
               </h2>
             </FadeIn>
@@ -58,7 +58,7 @@ export function TheRealitySection() {
             {points.map((point, i) => (
               <FadeInChild key={i}>
                 <div className="flex flex-col gap-4">
-                  <span className="text-6xl md:text-7xl font-bold text-black tracking-tighter font-serif">
+                  <span className="text-5xl md:text-7xl font-bold text-black tracking-tighter font-serif">
                     {point.id}
                   </span>
                   <div className="flex flex-col gap-2">

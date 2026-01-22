@@ -43,8 +43,8 @@ export function FAQ() {
     <section id="faq" className="py-32 bg-white w-full flex justify-center border-b border-black/5">
       <div className="container px-4 md:px-6 mx-auto max-w-4xl">
         <FadeIn>
-          <div className="flex flex-col items-center text-center mb-20">
-            <h2 className="font-serif text-4xl md:text-5xl text-black">
+          <div className="flex flex-col items-center text-center mb-12 md:mb-16">
+            <h2 className="font-serif text-3xl md:text-5xl text-black">
                // FREQUENTLY ASKED QUESTIONS
             </h2>
           </div>
@@ -60,9 +60,9 @@ export function FAQ() {
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
                   className="w-full py-6 md:py-8 flex items-center justify-between text-left group transition-all"
                 >
-                  <span className="text-xl md:text-2xl font-serif font-medium text-black group-hover:text-black/60 transition-colors tracking-tight">
-                    {faq.question}
-                  </span>
+                  <span className="text-base md:text-lg font-sans font-medium text-black/80 tracking-tight text-left pr-8">
+                {faq.question}
+              </span>
                   <div className="flex-shrink-0 ml-4">
                     {openIndex === i ? (
                       <Minus className="w-6 h-6 text-black/40" />
@@ -81,9 +81,9 @@ export function FAQ() {
                       transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                     >
                       <div className="pb-8 pr-4">
-                        <p className="text-lg md:text-xl text-black/60 font-light leading-relaxed tracking-tight whitespace-pre-line">
-                          {faq.answer}
-                        </p>
+                        <p className="text-base md:text-lg text-black/60 font-serif italic leading-relaxed pt-2 pb-6 whitespace-pre-line">
+                    {faq.answer}
+                  </p>
                       </div>
                     </motion.div>
                   )}

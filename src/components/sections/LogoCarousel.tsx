@@ -38,7 +38,7 @@ export function LogoCarousel() {
           }}
         >
           <motion.div 
-            className="flex items-center gap-16 md:gap-24 w-max"
+            className="flex items-center gap-12 md:gap-24 w-max"
             animate={{ x: "-50%" }}
             transition={{ 
               duration: 100, 

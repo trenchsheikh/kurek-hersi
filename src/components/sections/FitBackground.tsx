@@ -20,7 +20,7 @@ export function FitBackground() {
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
 
           {/* Content Wrapper */}
-          <div className="relative z-20 px-6 py-20 md:py-32 flex flex-col items-center text-center">
+          <div className="relative z-20 px-6 py-16 md:py-32 flex flex-col items-center text-center">
             <FadeIn>
               <h2 className="font-serif text-3xl md:text-5xl text-white leading-tight tracking-tight mb-8 max-w-3xl">
                 Clarity before commitment.
@@ -29,11 +29,11 @@ export function FitBackground() {
 
             <FadeIn delay={0.2}>
               <div className="max-w-2xl mx-auto space-y-6">
-                <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed tracking-tight">
+                <p className="text-base md:text-xl text-white/90 font-light leading-relaxed tracking-tight">
                   When budgets, roadmaps, or narratives are about to be locked in, uncertainty becomes expensive.
                 </p>
                 
-                <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed tracking-tight">
+                <p className="text-base md:text-xl text-white/90 font-light leading-relaxed tracking-tight">
                   This work exists to replace assumption with independent buyer truth before those commitments are made.
                 </p>
 

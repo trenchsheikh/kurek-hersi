@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const instrumentSerif = Instrument_Serif({ 
@@ -32,7 +33,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link 
+          href="https://assets.calendly.com/assets/external/widget.css" 
+          rel="stylesheet" 
+        />
+      </head>
       <body className={`${inter.variable} ${instrumentSerif.variable} font-sans antialiased bg-background text-foreground`}>
+        <Script 
+          src="https://assets.calendly.com/assets/external/widget.js" 
+          strategy="afterInteractive"
+        />
         <ScrollBeam />
         {children}
       </body>

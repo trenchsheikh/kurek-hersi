@@ -17,7 +17,7 @@ const team = [
 
 export function Team() {
   return (
-    <section id="team" className="py-32 bg-white w-full flex justify-center items-center border-b border-black/5">
+    <section id="team" className="py-20 md:py-32 bg-white w-full flex justify-center items-center border-b border-black/5">
       <div className="container px-4 md:px-6 w-full max-w-6xl">
         <div className="flex flex-col items-center text-center mb-16">
           <FadeIn>
@@ -27,7 +27,7 @@ export function Team() {
           </FadeIn>
         </div>
 
-        <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
           {team.map((member, i) => (
             <FadeInChild key={i}>
               <div className="group cursor-pointer">
