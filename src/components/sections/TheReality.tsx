@@ -7,7 +7,7 @@ export function TheRealitySection() {
     { id: "100%", label: "Manually verified buyers", text: "Every participant is reviewed, cross-referenced, and validated for role and authority." },
     { id: "50+", label: "Research engagements", text: "Across high-stakes GTM, pricing, and positioning work." },
     { id: "2,000+", label: "Decision-maker responses analysed", text: "Across high stakes commercial context." },
-    { id: "21–25", label: "Days to decision-grade clarity", text: "Fast enough to matter.\nDeliberate enough to trust." }
+    { id: "21–25", label: <>Days to decision-grade <br className="md:hidden" /> clarity</>, text: "Fast enough to matter.\nDeliberate enough to trust." }
   ];
 
   return (
