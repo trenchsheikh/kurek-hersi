@@ -7,8 +7,8 @@ export function Footer() {
           <p className="text-sm font-bold uppercase tracking-[0.3em] text-white/40">
             Kurek Hersi
           </p>
-          <p className="text-[10px] md:text-sm font-sans font-medium text-white/40 tracking-[0.2em] uppercase mt-4">
-            Stop guessing. Know what buyers believe. End the internal debate.
+          <p className="text-[10px] md:text-xs font-sans font-medium text-white/40 tracking-wider mt-4 max-w-2xl mx-auto leading-relaxed">
+            Kurek Hersi is registered in England and Wales. Company registration no. 16887876. <br /> Registered address: 13 Rookwood Way, London, England, E3 2XT
           </p>
         </div>
       </div>
