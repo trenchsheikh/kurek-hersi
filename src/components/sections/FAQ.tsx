@@ -44,8 +44,8 @@ export function FAQ() {
       <div className="container px-4 md:px-6 mx-auto max-w-4xl">
         <FadeIn>
           <div className="flex flex-col items-center text-center mb-12 md:mb-16">
-            <h2 className="font-serif text-3xl md:text-5xl text-black">
-               // FREQUENTLY ASKED QUESTIONS
+            <h2 className="font-serif text-2xl md:text-4xl text-black">
+               FREQUENTLY ASKED QUESTIONS
             </h2>
           </div>
         </FadeIn>

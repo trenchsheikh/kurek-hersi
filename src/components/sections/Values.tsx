@@ -28,7 +28,7 @@ export function Values() {
         <div className="grid lg:grid-cols-[1fr_3fr] gap-12 lg:gap-24 items-start mb-24">
           <FadeIn>
             <p className="text-[10px] font-bold tracking-[0.4em] text-black/40 uppercase mt-2">
-               // Our Values
+               Our Values
             </p>
             <p className="text-sm text-black/40 mt-6 max-w-[150px] font-sans font-medium uppercase tracking-widest leading-relaxed">
               Our core values guide everything we do.

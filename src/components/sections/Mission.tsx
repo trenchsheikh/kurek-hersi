@@ -10,7 +10,7 @@ export function Mission() {
           
           <FadeIn>
             <p className="text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase mt-2">
-               // Our Mission
+               Our Mission
             </p>
           </FadeIn>
 

@@ -60,7 +60,7 @@ export function Services() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
            <FadeIn>
              <Pill className="mb-4">Our Expertise</Pill>
-             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl tracking-tight text-foreground max-w-2xl">
+             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl tracking-tight text-foreground max-w-2xl">
                Comprehensive <br/> Research Capabilities
              </h2>
            </FadeIn>

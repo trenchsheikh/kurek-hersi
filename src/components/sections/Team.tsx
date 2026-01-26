@@ -22,7 +22,7 @@ export function Team() {
         <div className="flex flex-col items-center text-center mb-16">
           <FadeIn>
             <h2 className="font-serif text-4xl md:text-5xl text-black">
-               // MEET THE FOUNDERS
+               MEET THE FOUNDERS
             </h2>
           </FadeIn>
         </div>

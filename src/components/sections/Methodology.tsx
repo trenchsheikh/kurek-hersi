@@ -47,7 +47,7 @@ export function Methodology() {
               
               <div>
                 <Pill className="mb-8 border-white/20 text-white bg-white/5 hover:bg-white/10">Our Process</Pill>
-                <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.9] mb-8">
+                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[0.9] mb-8">
                   Scientific <br/> Precision.
                 </h2>
                 <p className="text-lg md:text-xl text-primary-foreground/80 font-light leading-relaxed max-w-md">

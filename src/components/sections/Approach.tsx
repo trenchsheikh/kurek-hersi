@@ -30,7 +30,7 @@ export function Approach() {
           <FadeIn className="space-y-12">
             <div>
               <p className="text-[10px] font-bold tracking-[0.4em] text-black/40 uppercase mb-8">
-                 // Our Approach
+                 Our Approach
               </p>
               <div className="aspect-[4/3] rounded-sm overflow-hidden bg-black/5 grayscale">
                 <img 

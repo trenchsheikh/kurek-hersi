@@ -9,13 +9,13 @@ export function About() {
         <div className="grid lg:grid-cols-[1fr_3fr] gap-12 lg:gap-24 items-start">
           <FadeIn>
             <p className="text-[10px] font-bold tracking-[0.4em] text-black/40 uppercase mt-2">
-               // About Us
+               About Us
             </p>
           </FadeIn>
 
           <FadeIn delay={0.2}>
              <div className="space-y-12">
-               <h2 className="text-4xl md:text-6xl lg:text-7xl font-sans font-bold tracking-tighter leading-[0.9] text-black/20">
+               <h2 className="text-3xl md:text-5xl lg:text-6xl font-sans font-bold tracking-tighter leading-[0.9] text-black/20">
                  Welcome to Kurek|Hersi: <br/>
                  <span className="text-black">Your Trusted Partner in <br/> Strategic AI Governance</span>
                </h2>

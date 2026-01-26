@@ -58,7 +58,7 @@ export function TheRealitySection() {
             {points.map((point, i) => (
               <FadeInChild key={i}>
                 <div className="flex flex-col items-center text-center md:items-start md:text-left gap-4">
-                  <span className="text-5xl md:text-7xl font-bold text-black tracking-tighter font-serif">
+                  <span className="text-4xl md:text-6xl font-bold text-black tracking-tighter font-serif">
                     {point.id}
                   </span>
                   <div className="flex flex-col items-center text-center md:items-start md:text-left gap-2">

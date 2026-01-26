@@ -13,7 +13,7 @@ export function StatsGraph() {
           {/* Text Content */}
           <FadeIn className="max-w-xl">
              <Pill className="mb-6">Analytics</Pill>
-             <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-foreground mb-8 leading-[0.9]">
+             <h2 className="font-serif text-3xl md:text-4xl lg:text-6xl text-foreground mb-8 leading-[0.9]">
                Data That <br/> Drives Growth.
              </h2>
              <p className="text-xl text-muted-foreground leading-relaxed mb-6">
@@ -32,7 +32,7 @@ export function StatsGraph() {
                <div>
                  <h3 className="text-sm font-bold text-white/40 uppercase tracking-widest mb-1">Market Projection</h3>
                  <div className="flex items-baseline gap-2">
-                   <span className="text-3xl font-serif font-bold text-white">24.8%</span>
+                   <span className="text-2xl font-serif font-bold text-white">24.8%</span>
                    <span className="text-sm font-sans font-bold text-emerald-400">+12% vs Baseline</span>
                  </div>
                </div>
