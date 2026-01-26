@@ -18,7 +18,7 @@ export function TheRealitySection() {
           {/* Left Column: Header & Context */}
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left gap-8 lg:sticky lg:top-32 lg:pt-12">
             <FadeIn>
-              <h2 className="font-serif text-3xl md:text-3xl lg:text-4xl text-black leading-tight tracking-tight whitespace-nowrap">
+              <h2 className="font-serif text-xl sm:text-2xl md:text-2xl lg:text-3xl text-black leading-tight tracking-tight whitespace-nowrap">
                 The cost of being <span className="text-black/30 font-light">wrong</span> compounds quietly.
               </h2>
             </FadeIn>
