@@ -6,12 +6,16 @@ const team = [
   {
     name: "Bart Kurek",
     role: "PARTNER",
-    image: "/bart.jpeg"
+    image: "/bart.jpeg",
+    // Default centering and hover effect
+    className: "group-hover:scale-105"
   },
   {
     name: "Jibreal Hersi",
     role: "PARTNER",
-    image: "/jibz.jpeg"
+    image: "/jibz.jpeg",
+    // Enlarge to allow moving up without gaps, and shift up to position head higher
+    className: "scale-[1.35] -translate-y-14 group-hover:scale-[1.4] object-center"
   }
 ];
 
@@ -22,7 +26,7 @@ export function Team() {
         <div className="flex flex-col items-center text-center mb-16">
           <FadeIn>
             <h2 className="font-serif text-4xl md:text-5xl text-black">
-               MEET THE FOUNDERS
+              MEET THE FOUNDERS
             </h2>
           </FadeIn>
         </div>
@@ -32,10 +36,10 @@ export function Team() {
             <FadeInChild key={i}>
               <div className="group cursor-pointer">
                 <div className="aspect-[4/5] overflow-hidden rounded-sm mb-6 bg-black/5">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className={`w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 ${member.className}`}
                   />
                 </div>
                 <div>
